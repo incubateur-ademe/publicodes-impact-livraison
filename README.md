@@ -19,11 +19,11 @@ Template dépôt GitHub pour créer un paquet Publicodes.
 ## Fonctionnalités
 
 - 📦 compilation des règles publicodes en un seul fichier JSON grâce à
-[`@incubateur-ademe/publicodes-tools`](https://github.com/incubateur-ademe/publicodes-tools)
+  [`@incubateur-ademe/publicodes-tools`](https://github.com/incubateur-ademe/publicodes-tools)
 - 📖 documentation du modèle interactive disponible sur GitHub Pages grâce à
-[`@publicodes/react-ui`](https://publi.codes/docs/api/react-ui)
+  [`@publicodes/react-ui`](https://publi.codes/docs/api/react-ui)
 - 🚀 API REST pour utiliser le modèle dans une application grâce à
-[`@publicodes/api`](https://publi.codes/docs/api/api-rest)
+  [`@publicodes/api`](https://publi.codes/docs/api/api-rest)
 
 ## Initialisation
 
@@ -37,35 +37,32 @@ projet :
 Pour utiliser les fonctionnalités de la CI :
 
 1. Il faut décommenter le fichier `./github/workflows/packaging.yaml`
-2. Ajouter les variables suivantes dans les secrets du repository GitHub :
-    - `NPM_TOKEN` : token NPM pour publier le paquet sur [npmjs.com](https://npmjs.com)
-    - `PAT` : Personal Access Token pour publier la documentation sur GitHub Pages
-![Screenshot from 2023-09-12 12-02-40](https://github.com/incubateur-ademe/publicodes-model-template/assets/44124798/a6fe53cc-5766-4541-8936-41d474ed0069)
-3. Aller dans les paramètres du repository GitHub et :
-    - modifier les droits des worflows
-![image](https://github.com/incubateur-ademe/publicodes-model-template/assets/44124798/cd7e37f9-0641-44f2-b968-79faa778b832)
-    - sélectionner la branche `gh-pages` dans les paramètres du repository
-![image](https://github.com/incubateur-ademe/publicodes-model-template/assets/44124798/77191750-12f1-4ab4-94a4-7447f1b77624)
-
+2. Ajouter les variables suivantes dans les secrets du repository GitHub : - `NPM_TOKEN` : token NPM pour publier le paquet sur [npmjs.com](https://npmjs.com) - `PAT` : Personal Access Token pour publier la documentation sur GitHub Pages
+   ![Screenshot from 2023-09-12 12-02-40](https://github.com/incubateur-ademe/publicodes-model-template/assets/44124798/a6fe53cc-5766-4541-8936-41d474ed0069)
+3. Aller dans les paramètres du repository GitHub et : - modifier les droits des worflows
+   ![image](https://github.com/incubateur-ademe/publicodes-model-template/assets/44124798/cd7e37f9-0641-44f2-b968-79faa778b832) - sélectionner la branche `gh-pages` dans les paramètres du repository
+   ![image](https://github.com/incubateur-ademe/publicodes-model-template/assets/44124798/77191750-12f1-4ab4-94a4-7447f1b77624)
 
 ## Exemples de dépôts utilisant ce template
 
 - [`@incubateur-ademe/publicodes-commun`](https://github.com/incubateur-ademe/publicodes-commun) -
-_Ensemble de règles communes utilisées pour l'implémentation des modèles Publicodes de l'incubateur_
+  _Ensemble de règles communes utilisées pour l'implémentation des modèles Publicodes de l'incubateur_
 - [`@incubateur-ademe/publicodes-negaoctet`](https://github.com/incubateur-ademe/publicodes-negaoctet) -
-_Modèle Publicodes pour la base de données NegaOctet_
+  _Modèle Publicodes pour la base de données NegaOctet_
 
-## Usage 
+## Usage
 
-Ajouter le paquet à vos dépendances : 
+Ajouter le paquet à vos dépendances :
+
 ```
-bun add %PACKAGE_NAME%
+bun add publicodes-impact-livraison
 ```
 
 Instancier un nouveau moteur Publicode :
+
 ```typescript
 import Engine from 'publicodes'
-import rules from '%PACKAGE_NAME%'
+import rules from 'publicodes-impact-livraison'
 
 const engine = new Engine(rules)
 
@@ -73,14 +70,15 @@ engine.evaluate('tablette . consommation en mode actif')
 ```
 
 Utiliser certaines règles dans un autre modèle publicodes :
+
 ```yaml
 importer!:
   depuis:
-    nom: %PACKAGE_NAME% 
-    url: https://github.com/%GITHUB_USER%/%PACKAGE_NAME%
+    nom: publicodes-impact-livraison
+    url: https://github.com/%GITHUB_USER%/publicodes-impact-livraison
   dans: modèle numérique
   les règles:
-    - numérique . internet . consommation horaire 
+    - numérique . internet . consommation horaire
     - ordinateur portable . construction
 ```
 
@@ -89,10 +87,10 @@ importer!:
 #### Compiler le modèle
 
 > Les règles publicodes du modèle sont disponible dans le workspace
-> [`rules/`](https://github.com/%GITHUB_USER%/%PACKAGE_NAME%/tree/main/rules).
+> [`rules/`](https://github.com/%GITHUB_USER%/publicodes-impact-livraison/tree/main/rules).
 
 Pour installer les dépendances et compiler tous les fichiers `.publicodes` en
-un seul fichier JSON, il suffit d'exécuter la commande suivante : 
+un seul fichier JSON, il suffit d'exécuter la commande suivante :
 
 ```
 bun && bun run build
@@ -101,7 +99,7 @@ bun && bun run build
 #### Lancer la documentation
 
 > Le code de la documentation est disponible dans le workspace
-> [`doc/`](https://github.com/%GITHUB_USER%/%PACKAGE_NAME%/tree/main/doc).
+> [`doc/`](https://github.com/%GITHUB_USER%/publicodes-impact-livraison/tree/main/doc).
 
 Pour lancer l'app React en local permettant de parcourir la documentation du
 modèle, il suffit d'exécuter la commande suivante :
@@ -115,10 +113,10 @@ bun run doc
 #### Lancer l'API
 
 > Le code de l'API est disponible dans le workspace
-> [`api/`](https://github.com/%GITHUB_USER%/%PACKAGE_NAME%/tree/main/api).
+> [`api/`](https://github.com/%GITHUB_USER%/publicodes-impact-livraison/tree/main/api).
 
 Pour lancer le serveur Node permettant d'utiliser l'API REST, il faut utiliser les commandes
-suivantes : 
+suivantes :
 
 ```
 bun run api

@@ -1,5 +1,5 @@
 node_modules
 .yarn
-%PACKAGE_NAME%.model.json
+publicodes-impact-livraison.model.json
 index.d.ts
 index.js
