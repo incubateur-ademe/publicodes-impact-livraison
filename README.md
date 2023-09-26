@@ -1,61 +1,24 @@
 <div align="center">
   <h3 align="center">
-	<big>Publicodes Package Template</big>
+	<big>Publicodes x Impact Livraison</big>
   </h3>
   <p align="center">
-   <a href="https://github.com/incubateur-ademe/publicodes-model-template/issues">Report Bug</a>
+   <a href="https://github.com/incubateur-ademe/publicodes-impact-livraison/issues">Report Bug</a>
    •
-   <a href="https://incubateur-ademe.github.io/publicodes-model-template/">API docs</a>
+   <a href="https://incubateur-ademe.github.io/publicodes-impact-livraison/">API docs</a>
    •
-   <a href="https://github.com/incubateur-ademe/publicodes-model-template/blob/master/CONTRIBUTING.md">Contribute</a>
-   •
-   <a href="https://publi.codes">Publicodes</a>
+   <a href="https://github.com/incubateur-ademe/publicodes-impact-livraison/blob/master/CONTRIBUTING.md">Contribute</a>
   </p>
 
-Template dépôt GitHub pour créer un paquet Publicodes.
+![CI][ci-link] ![NPM][npm-link]
+
+Un modèle [Publicodes](https://publi.codes) pour le simulmateur
+[Impact Livraison](https://impactco2.fr/livraison) de [Impact CO2](https://impactco2.fr).
+
+Sa documentation est disponible [en
+ligne](https://incubateur-ademe.github.io/publicodes-impact-livraison/).
 
 </div>
-
-## Fonctionnalités
-
-- 📦 compilation des règles publicodes en un seul fichier JSON grâce à
-  [`@incubateur-ademe/publicodes-tools`](https://github.com/incubateur-ademe/publicodes-tools)
-- 📖 documentation du modèle interactive disponible sur GitHub Pages grâce à
-  [`@publicodes/react-ui`](https://publi.codes/docs/api/react-ui)
-- 🚀 API REST pour utiliser le modèle dans une application grâce à
-  [`@publicodes/api`](https://publi.codes/docs/api/api-rest)
-
-## Initialisation
-
-Pour utiliser ce template, il suffit de cliquer sur le bouton `Use this
-template`. Puis de remplacer les variables suivantes dans tous les fichiers du
-projet :
-
-- `%PACKAGE_NAME%` : nom du paquet npm / nom du repository GitHub
-- `%GITHUB_USER%` : nom d'utilisateur GitHub / organisation GitHub
-
-Pour utiliser les fonctionnalités de la CI :
-
-1. Il faut décommenter le fichier `./github/workflows/packaging.yaml`
-2. Ajouter les variables suivantes dans les secrets du repository GitHub :
-- `NPM_TOKEN` : token NPM pour publier le paquet sur [npmjs.com](https://npmjs.com)
-- `PAT` : Personal Access Token pour publier la documentation sur GitHub Pages
-
-   ![Screenshot from 2023-09-12 12-02-40](https://github.com/incubateur-ademe/publicodes-model-template/assets/44124798/a6fe53cc-5766-4541-8936-41d474ed0069)
-5. Aller dans les paramètres du repository GitHub et :
-
-- modifier les droits des worflows
-   ![image](https://github.com/incubateur-ademe/publicodes-model-template/assets/44124798/cd7e37f9-0641-44f2-b968-79faa778b832)
-
-- sélectionner la branche `gh-pages` dans les paramètres du repository
-   ![image](https://github.com/incubateur-ademe/publicodes-model-template/assets/44124798/77191750-12f1-4ab4-94a4-7447f1b77624)
-
-## Exemples de dépôts utilisant ce template
-
-- [`@incubateur-ademe/publicodes-commun`](https://github.com/incubateur-ademe/publicodes-commun) -
-  _Ensemble de règles communes utilisées pour l'implémentation des modèles Publicodes de l'incubateur_
-- [`@incubateur-ademe/publicodes-negaoctet`](https://github.com/incubateur-ademe/publicodes-negaoctet) -
-  _Modèle Publicodes pour la base de données NegaOctet_
 
 ## Usage
 
@@ -73,7 +36,7 @@ import rules from 'publicodes-impact-livraison'
 
 const engine = new Engine(rules)
 
-engine.evaluate('tablette . consommation en mode actif')
+engine.evaluate('livraison colis . scénario . domicile')
 ```
 
 Utiliser certaines règles dans un autre modèle publicodes :
@@ -85,8 +48,8 @@ importer!:
     url: https://github.com/incubateur-ademe/publicodes-impact-livraison
   dans: modèle numérique
   les règles:
-    - numérique . internet . consommation horaire
-    - ordinateur portable . construction
+    - livraison colis . scénario . domicile
+    - livraison colis par avion
 ```
 
 ### En local
