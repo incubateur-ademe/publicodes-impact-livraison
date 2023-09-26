@@ -46,7 +46,7 @@ importer!:
   depuis:
     nom: publicodes-impact-livraison
     url: https://github.com/incubateur-ademe/publicodes-impact-livraison
-  dans: modèle numérique
+  dans: modèle livraison
   les règles:
     - livraison colis . scénario . domicile
     - livraison colis par avion
