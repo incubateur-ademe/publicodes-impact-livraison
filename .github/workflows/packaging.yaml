@@ -8,6 +8,7 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   check_if_version_upgraded:
     name: Check if version upgrade
