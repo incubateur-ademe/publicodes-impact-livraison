@@ -12,7 +12,7 @@ const engine = new Engine(model as {})
 const baseUrl =
   process.env.NODE_ENV === 'development' ? '' : '/publicodes-impact-livraison'
 
-const defaultRule = 'intensité électricité'
+const defaultRule = 'livraison colis'
 
 function Documentation() {
   const url = useParams()['*']
