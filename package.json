@@ -1,6 +1,6 @@
 {
   "name": "publicodes-impact-livraison",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -28,7 +28,7 @@
     "@incubateur-ademe/publicodes-tools": "^0.2.1"
   },
   "dependencies": {
-    "publicodes": "^1.0.0-beta.71"
+    "publicodes": "^1.0.0-beta.74"
   },
   "publishConfig": {
     "access": "public"
