@@ -99,3 +99,6 @@ bun run api:watch
 
 Afin de publier une nouvelle version il suffit d'exécuter la commande `npm
 version`.
+
+[ci-link]: https://img.shields.io/github/actions/workflow/status/incubateur-ademe/publicodes-impact-livraison/packaging.yaml?logo=github&logoColor=white&label=build%20%26%20test
+[npm-link]: https://img.shields.io/npm/v/%40incubateur-ademe%2Fpublicodes-impact-livraison?logo=npm&logoColor=white&color=salmon
