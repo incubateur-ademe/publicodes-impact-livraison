@@ -24,7 +24,7 @@ livraison colis . empreinte plateforme . nombre de colis par jour:
   formule: 100000
 
 livraison colis . empreinte plateforme . nombre de colis par an:
-  formule: nombre de colis par jour * 365
+  formule: nombre de colis par jour * commun . jours par an
 
 livraison colis . empreinte plateforme . infrastructures:
   formule: part de plateforme par colis * empreinte entrepot
@@ -56,7 +56,7 @@ livraison colis . empreinte plateforme . gaz:
   unité: gCO2e
 
 livraison colis . empreinte plateforme . gaz . consommation plateforme par jour:
-  formule: 82.8 / 365
+  formule: 82.8 / commun . jours par an
   unité: MJ/m2/jour
 # livraison colis . empreinte plateforme . type:
 #   titre: Type de plateforme
@@ -95,4 +95,3 @@ livraison colis . empreinte plateforme . gaz . consommation plateforme par jour:
 #         alors: 0
 #       - si: température = 'dirigée'
 #         alors: 0
-

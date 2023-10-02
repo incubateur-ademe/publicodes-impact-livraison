@@ -61,7 +61,7 @@ livraison colis . empreinte entrepot . infrastructures . part entrepot par colis
   formule: 1 / nombre de colis par m2
 
 livraison colis . empreinte entrepot . infrastructures . nombre de colis par m2:
-  formule: empreinte entrepot . durée de vie * 365 * empreinte entrepot . nombre de colis par m2 / empreinte entrepot . nombre de jours de stockage
+  formule: empreinte entrepot . durée de vie * commun . jours par an * empreinte entrepot . nombre de colis par m2 / empreinte entrepot . nombre de jours de stockage
 
 livraison colis . empreinte entrepot . infrastructures . empreinte entrepot:
   titre: Empreinte construction et démolition entrepôt
@@ -83,5 +83,5 @@ livraison colis . empreinte entrepot . gaz:
   unité: gCO2e
 
 livraison colis . empreinte entrepot . gaz . consommation entrepot par jour:
-  formule: 82.8 / 365
+  formule: 82.8 / commun . jours par an
   unité: MJ/m2/jour

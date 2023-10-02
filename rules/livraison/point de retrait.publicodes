@@ -41,7 +41,7 @@ livraison colis . empreinte point de retrait . infrastructures . part point de r
   formule: 1 / nombre de colis par m2
 
 livraison colis . empreinte point de retrait . infrastructures . nombre de colis par m2:
-  formule: empreinte point de retrait . durée de vie * 365 * empreinte point de retrait . nombre de colis par m2 / 24
+  formule: empreinte point de retrait . durée de vie * commun . jours par an * empreinte point de retrait . nombre de colis par m2 / 24
 
 livraison colis . empreinte point de retrait . infrastructures . empreinte magasin:
   titre: Empreinte construction et démolition magasin traditionnel
@@ -63,5 +63,5 @@ livraison colis . empreinte point de retrait . gaz:
   unité: gCO2e
 
 livraison colis . empreinte point de retrait . gaz . consommation point de retrait par jour:
-  formule: 82.8 / 365
+  formule: 82.8 / commun . jours par an
   unité: MJ/m2/jour
