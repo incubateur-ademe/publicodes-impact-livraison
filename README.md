@@ -25,14 +25,14 @@ ligne](https://incubateur-ademe.github.io/publicodes-impact-livraison/).
 Ajouter le paquet à vos dépendances :
 
 ```
-bun add publicodes-impact-livraison
+bun add @incubateur-ademe/publicodes-impact-livraison
 ```
 
 Instancier un nouveau moteur Publicode :
 
 ```typescript
 import Engine from 'publicodes'
-import rules from 'publicodes-impact-livraison'
+import rules from '@incubateur-ademe/publicodes-impact-livraison'
 
 const engine = new Engine(rules)
 
@@ -44,7 +44,7 @@ Utiliser certaines règles dans un autre modèle publicodes :
 ```yaml
 importer!:
   depuis:
-    nom: publicodes-impact-livraison
+    nom: "@incubateur-ademe/publicodes-impact-livraison"
     url: https://github.com/incubateur-ademe/publicodes-impact-livraison
   dans: modèle livraison
   les règles:
@@ -77,7 +77,7 @@ modèle, il suffit d'exécuter la commande suivante :
 ```
 bun i --cwd doc
 
-bun run doc
+bun run doc:start
 ```
 
 #### Lancer l'API
