@@ -1,6 +1,15 @@
+importer!:
+  depuis:
+    nom: "@incubateur-ademe/publicodes-commun"
+    url: https://github.com/incubateur-ademe/publicodes-commun
+  dans: commun
+  les règles:
+    - intensité électricité
+    - jours par an
+
 livraison colis . empreinte production mix électrique:
   description: Intensité moyenne, tous types de consommations confondues, année 2022.
-  formule: 52
+  formule: commun . intensité électricité * 1000
   unité: gCO2e / kWh
   note: Issu de la Base Empreinte. Electricité/2022 - mix moyen/consommation
 

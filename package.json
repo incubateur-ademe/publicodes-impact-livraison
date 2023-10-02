@@ -25,7 +25,8 @@
   "authors": [],
   "license": "MIT",
   "devDependencies": {
-    "@incubateur-ademe/publicodes-tools": "^0.2.1"
+    "@incubateur-ademe/publicodes-commun": "^0.1.2",
+    "@incubateur-ademe/publicodes-tools": "^0.4.2"
   },
   "dependencies": {
     "publicodes": "^1.0.0-beta.74"
