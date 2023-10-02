@@ -12,7 +12,7 @@
 
 ![CI][ci-link] ![NPM][npm-link]
 
-Un modèle [Publicodes](https://publi.codes) pour le simulmateur
+Un modèle [Publicodes](https://publi.codes) pour le simulateur
 [Impact Livraison](https://impactco2.fr/livraison) de [Impact CO2](https://impactco2.fr).
 
 Sa documentation est disponible [en
