@@ -29,7 +29,7 @@
     "@incubateur-ademe/publicodes-tools": "^0.4.2"
   },
   "dependencies": {
-    "publicodes": "^1.0.0-beta.74"
+    "publicodes": "^1.0.0-beta.77"
   },
   "publishConfig": {
     "access": "public"
