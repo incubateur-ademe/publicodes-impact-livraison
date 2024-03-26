@@ -9,7 +9,7 @@
     "index.js"
   ],
   "scripts": {
-    "build": "bun run index.js"
+    "build": "node index.js"
   },
   "repository": "git@github.com:incubateur-ademe/publicodes-impact-livraison.git",
   "homepage": "https://github.com/incubateur-ademe/publicodes-impact-livraison#readme",

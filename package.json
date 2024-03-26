@@ -13,9 +13,9 @@
   ],
   "scripts": {
     "clean": "rm -r publicodes-impact-livraison.model.json index.d.ts index.js",
-    "build": "bun run build.js",
-    "doc:start": "bun run build && cp publicodes-impact-livraison.model.json doc/src && cd doc && bun run start",
-    "doc:build": "bun run build && cp publicodes-impact-livraison.model.json doc/src && cd doc && bun run build"
+    "build": "node build.js",
+    "doc": "yarn run build && cp publicodes-impact-livraison.model.json doc/src && cd doc && yarn run start",
+    "doc:build": "yarn run build && cp publicodes-impact-livraison.model.json doc/src && cd doc && yarn run build",
   },
   "repository": "git@github.com:incubateur-ademe/publicodes-impact-livraison.git",
   "homepage": "https://github.com/incubateur-ademe/publicodes-impact-livraison#readme",
