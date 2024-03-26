@@ -16,6 +16,7 @@
     "build": "node build.js",
     "doc": "yarn run build && cp publicodes-impact-livraison.model.json doc/src && cd doc && yarn run start",
     "doc:build": "yarn run build && cp publicodes-impact-livraison.model.json doc/src && cd doc && yarn run build",
+    "format": "prettier . --write"
   },
   "repository": "git@github.com:incubateur-ademe/publicodes-impact-livraison.git",
   "homepage": "https://github.com/incubateur-ademe/publicodes-impact-livraison#readme",
@@ -29,6 +30,7 @@
     "@incubateur-ademe/publicodes-tools": "^0.4.2"
   },
   "dependencies": {
+    "prettier": "^3.2.5",
     "publicodes": "^1.0.0-beta.77"
   },
   "publishConfig": {
