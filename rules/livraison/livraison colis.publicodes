@@ -66,21 +66,17 @@ livraison colis par avion . hors europe:
       - livraison colis
 
 livraison colis par avion . entrepot stockage chine:
-  formule:
-    recalcul:
-      règle: livraison colis . entrepot stockage
-      avec:
-        livraison colis . empreinte production mix électrique: livraison colis . empreinte production mix électrique chine
+  valeur: livraison colis . entrepot stockage
+  contexte:
+    livraison colis . empreinte production mix électrique: livraison colis . empreinte production mix électrique chine
   note: |
     L'idée ici est d'approcher l'impact de l'entrpôt en Chine via le mix électrique. Attention, c'est un mix de consommation.
     Il faudrait également faire ce travail pour la consommation de gaz.
 
 livraison colis par avion . transport inter plateformes chine:
-  formule:
-    recalcul:
-      règle: livraison colis . transport inter plateformes
-      avec:
-        livraison colis . transport inter plateformes . option transport aérien: oui
+  valeur: livraison colis . transport inter plateformes
+  contexte:
+    livraison colis . transport inter plateformes . option transport aérien: oui
 
 livraison colis par avion . europe:
   description: |
@@ -92,22 +88,18 @@ livraison colis par avion . europe:
       - livraison colis
 
 livraison colis par avion . entrepot stockage europe:
-  formule:
-    recalcul:
-      règle: livraison colis . entrepot stockage
-      avec:
-        livraison colis . empreinte production mix électrique: livraison colis . empreinte production mix électrique europe
+  valeur: livraison colis . entrepot stockage
+  contexte:
+    livraison colis . empreinte production mix électrique: livraison colis . empreinte production mix électrique europe
   note: |
     L'idée ici est d'approcher l'impact d'un entrepôt en Europe via le mix électrique. Attention, c'est un mix de consommation.
     Il faudrait également faire ce travail pour la consommation de gaz.
 
 livraison colis par avion . transport inter plateformes europe:
-  formule:
-    recalcul:
-      règle: livraison colis . transport inter plateformes
-      avec:
-        livraison colis . transport inter plateformes . option transport aérien: oui
-        livraison colis . transport inter plateformes . aérien . distance: 2000
+  valeur: livraison colis . transport inter plateformes
+  contexte:
+    livraison colis . transport inter plateformes . option transport aérien: oui
+    livraison colis . transport inter plateformes . aérien . distance: 2000
 
 livraison colis . scénario:
   titre: Scénario de livraison

@@ -2,20 +2,18 @@
 # yarn lockfile v1
 
 
-"@incubateur-ademe/publicodes-commun@^0.1.2":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-commun/-/publicodes-commun-0.1.5.tgz#9720644ae83bb4331d447624988a5f4c34b1a7c4"
-  integrity sha512-VMrbYX2tpMccGU8nnyWjeogri0PPOMbEBace40Kek7KT4SbJKFaX6+HU/RnTkGCgkYz0Mb5acfuaoUHqAcXbpA==
-  dependencies:
-    publicodes "1.0.0-beta.77"
+"@incubateur-ademe/publicodes-commun@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-commun/-/publicodes-commun-1.1.1.tgz#30a6665dcb25dfa7563132b537cc00b11aaad616"
+  integrity sha512-bM3JhoDrXFCM85bbAFxTprGBb//d2Ij2nO6w19n8+w/klhv7jccAmS8eA2Up0RHmHrP3HmOC9N1hDqBU2EBMpw==
 
-"@incubateur-ademe/publicodes-tools@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-tools/-/publicodes-tools-0.4.2.tgz#e614855d95d7c1f1ef0cdc8de8162c11a8ca6c10"
-  integrity sha512-i/SYYxO1I/enMTIA0tLSm4FM0P2AXcfW5rI7xfkBf1jnTePXlJpe7g3baxI8wEQQRosqr040Sj7Sb79S8kWWfg==
+"@publicodes/tools@^1.0.5":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@publicodes/tools/-/tools-1.0.6.tgz#773f55fb84839cc2a4b9700c738b61b4ca267751"
+  integrity sha512-CUfFoRL7hNmugMfID+S/lFZL4njR6yY5Wcwhs9TAapLYVTyZpWYinjIgBF55iOmEjAu7HuNJssB6RYl12MLajA==
   dependencies:
     "@types/node" "^18.11.18"
-    publicodes "^1.0.0-beta.71"
+    publicodes "^1.1.0"
 
 "@types/node@^18.11.18":
   version "18.19.26"
@@ -29,12 +27,7 @@ prettier@^3.2.5:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.2.5.tgz#e52bc3090586e824964a8813b09aba6233b28368"
   integrity sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==
 
-publicodes@1.0.0-beta.77:
-  version "1.0.0-beta.77"
-  resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.0.0-beta.77.tgz#45e3c4d2a46bfadcc932e1405ea037e659c28134"
-  integrity sha512-F8U3WGUWMo3/rxhWYS1gWIiG20g1Yy/+PpXdHM99d6ZHKWnnyh/4txVEuyVE75glgDs+mTjwZPnmoKWsTMXluA==
-
-publicodes@^1.0.0-beta.71, publicodes@^1.0.0-beta.77:
+publicodes@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.2.0.tgz#2856891da07633315eff419402bb61109045504d"
   integrity sha512-qit3KsTqwZct5Xt6uyJ83yXNXxxScKuSRvemUgCRWEczP/mPAX/tiDQUgwwOC2fDoiCuQuZ9EiQwU5HfzHFIJQ==

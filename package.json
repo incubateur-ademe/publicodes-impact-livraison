@@ -26,12 +26,12 @@
   "authors": [],
   "license": "MIT",
   "devDependencies": {
-    "@incubateur-ademe/publicodes-commun": "^0.1.2",
-    "@incubateur-ademe/publicodes-tools": "^0.4.2"
+    "@incubateur-ademe/publicodes-commun": "^1.1.1",
+    "@publicodes/tools": "^1.0.5",
+    "prettier": "^3.2.5"
   },
-  "dependencies": {
-    "prettier": "^3.2.5",
-    "publicodes": "^1.0.0-beta.77"
+  "peerDependencies": {
+    "publicodes": "^1.1.1"
   },
   "publishConfig": {
     "access": "public"

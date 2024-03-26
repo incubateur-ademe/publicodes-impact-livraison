@@ -1663,6 +1663,14 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@publicodes/react-ui@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@publicodes/react-ui/-/react-ui-1.2.0.tgz#4abd5273a35cb14e37227123ef0ff933a8efc5ba"
+  integrity sha512-0SVIyztnaidp+iOuWYJnK3FICvgYVxxsIQR5chj385mR4xD9SxpI2WSxB+5L+CvQc72PGAt+diXBMSvvdDNS/A==
+  dependencies:
+    fuse.js "^7.0.0"
+    styled-components "^6.1.1"
+
 "@remix-run/router@1.15.3":
   version "1.15.3"
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.15.3.tgz#d2509048d69dbb72d5389a14945339f1430b2d3c"
@@ -4860,6 +4868,11 @@ functions-have-names@^1.2.3:
   resolved "https://registry.yarnpkg.com/functions-have-names/-/functions-have-names-1.2.3.tgz#0404fe4ee2ba2f607f0e0ec3c80bae994133b834"
   integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
 
+fuse.js@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-7.0.0.tgz#6573c9fcd4c8268e403b4fc7d7131ffcf99a9eb2"
+  integrity sha512-14F4hBIxqKvD4Zz/XjDc3y94mNZN6pRv3U13Udo0lNLCWRBUsrMv2xwcF/y/Z5sV6+FQW+/ow68cHpm4sunt8Q==
+
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
@@ -8026,14 +8039,7 @@ psl@^1.1.33:
   resolved "https://registry.yarnpkg.com/psl/-/psl-1.9.0.tgz#d0df2a137f00794565fcaf3b2c00cd09f8d5a5a7"
   integrity sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==
 
-publicodes-react@^1.0.0-beta.71:
-  version "1.0.0-beta.77"
-  resolved "https://registry.yarnpkg.com/publicodes-react/-/publicodes-react-1.0.0-beta.77.tgz#da9550b4fd8cbebc330336a11e6831317ece7db1"
-  integrity sha512-6DigDTzhiSDWG3MPuHe022ef7Vs1JLxezeH41bbjHT91I7xh2x2zTAFVlanyFSMm8QO0GhA9micCHkBUzfAIsw==
-  dependencies:
-    styled-components "^6.0.8"
-
-publicodes@^1.0.0-beta.71:
+publicodes@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.2.0.tgz#2856891da07633315eff419402bb61109045504d"
   integrity sha512-qit3KsTqwZct5Xt6uyJ83yXNXxxScKuSRvemUgCRWEczP/mPAX/tiDQUgwwOC2fDoiCuQuZ9EiQwU5HfzHFIJQ==
@@ -9099,7 +9105,7 @@ style-to-object@^0.4.0:
   dependencies:
     inline-style-parser "0.1.1"
 
-styled-components@^6.0.8:
+styled-components@^6.1.1:
   version "6.1.8"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-6.1.8.tgz#c109d36aeea52d8f049e12de2f3be39a6fc86201"
   integrity sha512-PQ6Dn+QxlWyEGCKDS71NGsXoVLKfE1c3vApkvDYS5KAK+V8fNWGhbSUEo9Gg2iaID2tjLXegEW3bZDUGpofRWw==
