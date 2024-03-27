@@ -68,7 +68,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install dependencies and build
-        run: yarn install --immutable
+        run: yarn install --immutable && yarn install --immutable --cwd doc
       - run: yarn run doc:build
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v3
@@ -91,8 +91,8 @@ jobs:
       - name: Setup .npmrc file to publish to npm
         uses: actions/setup-node@v3
         with:
-          node-version: "18.x"
-          registry-url: "https://registry.npmjs.org"
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies and build
         run: yarn install --immutable && yarn build
       - name: Publish to NPM
