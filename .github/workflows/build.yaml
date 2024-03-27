@@ -1,0 +1,22 @@
+name: Build rules
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+      - run: yarn install --immutable
+      - run: git log | head && git status
+      - id: build
+        name: Build
+        run: yarn run build
