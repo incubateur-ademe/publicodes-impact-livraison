@@ -26,8 +26,8 @@
   "authors": [],
   "license": "MIT",
   "devDependencies": {
-    "@incubateur-ademe/publicodes-commun": "^1.1.1",
-    "@publicodes/tools": "^1.0.5",
+    "@incubateur-ademe/publicodes-commun": "^1.1.2",
+    "@publicodes/tools": "^1.0.7",
     "prettier": "^3.2.5"
   },
   "peerDependencies": {

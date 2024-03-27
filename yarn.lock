@@ -2,18 +2,18 @@
 # yarn lockfile v1
 
 
-"@incubateur-ademe/publicodes-commun@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-commun/-/publicodes-commun-1.1.1.tgz#30a6665dcb25dfa7563132b537cc00b11aaad616"
-  integrity sha512-bM3JhoDrXFCM85bbAFxTprGBb//d2Ij2nO6w19n8+w/klhv7jccAmS8eA2Up0RHmHrP3HmOC9N1hDqBU2EBMpw==
+"@incubateur-ademe/publicodes-commun@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-commun/-/publicodes-commun-1.1.2.tgz#54b480350b27b2885a40aba1bc2a574401181555"
+  integrity sha512-PN7syNN7F/MRGJs8TYc8yXRH52OUoIE7EbvlgQsWZI5LqUNbpKJC58ZAfGc7RxK8Qc16wecCXhmsYXhSPOksrQ==
 
-"@publicodes/tools@^1.0.5":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@publicodes/tools/-/tools-1.0.6.tgz#773f55fb84839cc2a4b9700c738b61b4ca267751"
-  integrity sha512-CUfFoRL7hNmugMfID+S/lFZL4njR6yY5Wcwhs9TAapLYVTyZpWYinjIgBF55iOmEjAu7HuNJssB6RYl12MLajA==
+"@publicodes/tools@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@publicodes/tools/-/tools-1.0.7.tgz#abbe817b68df24e0148eebcda7dd4260de3731e8"
+  integrity sha512-mf1BLetTRg+C+yfJgXp6I5xd3P8lIl+L/4ZHmhAZ/uW4GDWeJAargzdLlQPyXHNYiad3n/rm/nhwrze1Gvj1XQ==
   dependencies:
     "@types/node" "^18.11.18"
-    publicodes "^1.1.0"
+    publicodes "^1.1.1"
 
 "@types/node@^18.11.18":
   version "18.19.26"
@@ -27,7 +27,7 @@ prettier@^3.2.5:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.2.5.tgz#e52bc3090586e824964a8813b09aba6233b28368"
   integrity sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==
 
-publicodes@^1.1.0:
+publicodes@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/publicodes/-/publicodes-1.2.0.tgz#2856891da07633315eff419402bb61109045504d"
   integrity sha512-qit3KsTqwZct5Xt6uyJ83yXNXxxScKuSRvemUgCRWEczP/mPAX/tiDQUgwwOC2fDoiCuQuZ9EiQwU5HfzHFIJQ==
