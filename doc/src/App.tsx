@@ -1,6 +1,6 @@
 import Engine from 'publicodes'
 import './App.css'
-import { RulePage } from 'publicodes-react'
+import { RulePage } from '@publicodes/react-ui'
 import { Link, Route, Routes, useParams } from 'react-router-dom'
 import { ComponentProps, useRef } from 'react'
 import ReactMardown from 'react-markdown'
@@ -18,7 +18,7 @@ function Documentation() {
   const url = useParams()['*']
   const { current: renderers } = useRef({
     Link,
-    Text: ({ children }) => <ReactMardown children={children} />,
+    Text: ({ children }) => <ReactMardown children={children} />
   } as ComponentProps<typeof RulePage>['renderers'])
 
   return (
@@ -29,7 +29,7 @@ function Documentation() {
         engine={engine}
         renderers={renderers}
         language={'fr'}
-        npmPackage='publicodes-impact-livraison'
+        npmPackage="publicodes-impact-livraison"
       />
     </div>
   )
@@ -52,7 +52,7 @@ function Landing() {
 
 export default function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Routes>
         <Route path={`${baseUrl}/`} element={<Landing />} />
         <Route path={`${baseUrl}/doc/*`} element={<Documentation />} />

@@ -48,7 +48,7 @@ livraison colis . magasin . volume stockage total:
 
 livraison colis . magasin . capacité stockage:
   formule: volume stockage total * 52
-  unité: m3 / semaine.an
+  unité: m3/semaine.an
 
 livraison colis . magasin . infrastructures:
   formule: part magasin par article * empreinte magasin

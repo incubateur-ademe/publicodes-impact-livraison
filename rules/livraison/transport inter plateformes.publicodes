@@ -91,7 +91,7 @@ livraison colis . transport inter plateformes . routier . route:
 
 livraison colis . transport inter plateformes . routier . route . empreinte:
   formule: 5.6
-  unité: gCO2e / t.km
+  unité: gCO2e/t.km
   note: Source ECEL
 
 livraison colis . transport inter plateformes . routier . route . tonnes km:
@@ -109,7 +109,7 @@ livraison colis . transport inter plateformes . routier . fabrication véhicule 
         alors: 8.4
       - si: véhicule = 'PL moyen'
         alors: 2.8
-  unité: gCO2e / t.km
+  unité: gCO2e/t.km
 
 livraison colis . transport inter plateformes . routier . fabrication véhicule . tonnes km:
   formule: distance * véhicule . chargement moyen * livraison colis . informations . poids / 1000
@@ -121,13 +121,11 @@ livraison colis . transport inter plateformes . routier . usage véhicule:
   unité: gCO2e
 
 livraison colis . transport inter plateformes . routier . usage véhicule . empreinte:
-  formule:
-    recalcul:
-      règle: empreinte véhicule par km HBEFA
-      avec:
-        empreinte véhicule par km HBEFA . vitesse moyenne véhicule: véhicule . vitesse moyenne
-        empreinte véhicule par km HBEFA . type de véhicule: véhicule
-  unité: gCO2e / t.km
+  valeur: empreinte véhicule par km HBEFA
+  contexte:
+    empreinte véhicule par km HBEFA . vitesse moyenne véhicule: véhicule . vitesse moyenne
+    empreinte véhicule par km HBEFA . type de véhicule: véhicule
+  unité: gCO2e/t.km
 
 livraison colis . transport inter plateformes . aérien:
   formule: tonnes km * empreinte
@@ -146,7 +144,7 @@ livraison colis . transport inter plateformes . aérien . empreinte:
       - si: distance < 5000
         alors: 1300
       - sinon: 1200
-  unité: gCO2e / t.km
+  unité: gCO2e/t.km
   note: |
     Les traînées de condensation ne sont pas prises en compte.
     Données issues de ECEL basé sur :
@@ -167,7 +165,7 @@ livraison colis . transport inter plateformes . ferroviaire . distance:
 
 livraison colis . transport inter plateformes . ferroviaire . empreinte:
   formule: 30
-  unité: gCO2e / t.km
+  unité: gCO2e/t.km
   note: On considère le FE "Europe"
 
 livraison colis . transport inter plateformes . ferroviaire . tonnes km:
@@ -185,7 +183,7 @@ livraison colis . transport inter plateformes . maritime . distance:
 
 livraison colis . transport inter plateformes . maritime . empreinte:
   formule: 48
-  unité: gCO2e / t.km
+  unité: gCO2e/t.km
   note: On considère le FE "Europe"
 
 livraison colis . transport inter plateformes . maritime . tonnes km:

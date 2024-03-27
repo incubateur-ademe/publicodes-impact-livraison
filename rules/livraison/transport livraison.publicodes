@@ -62,7 +62,7 @@ livraison colis . transport livraison . route:
 
 livraison colis . transport livraison . route . empreinte:
   formule: 5.6
-  unité: gCO2e / tonnes.km
+  unité: gCO2e/tonnes.km
   note: Source ECEL
 
 livraison colis . transport livraison . route . tonnes km:
@@ -80,7 +80,7 @@ livraison colis . transport livraison . fabrication véhicule . empreinte:
         alors: 8.4
       - si: véhicule = 'PL moyen'
         alors: 2.8
-  unité: gCO2e / tonnes.km
+  unité: gCO2e/tonnes.km
   note: Source ECEL (VUL par défaut)
 
 livraison colis . transport livraison . fabrication véhicule . tonnes km:
@@ -93,11 +93,9 @@ livraison colis . transport livraison . usage véhicule:
   unité: gCO2e
 
 livraison colis . transport livraison . usage véhicule . empreinte:
-  formule:
-    recalcul:
-      règle: empreinte véhicule par km HBEFA
-      avec:
-        empreinte véhicule par km HBEFA . vitesse moyenne véhicule: véhicule . vitesse moyenne
-        empreinte véhicule par km HBEFA . type de véhicule: véhicule
-  unité: gCO2e / tonnes.km
+  valeur: empreinte véhicule par km HBEFA
+  contexte:
+    empreinte véhicule par km HBEFA . vitesse moyenne véhicule: véhicule . vitesse moyenne
+    empreinte véhicule par km HBEFA . type de véhicule: véhicule
+  unité: gCO2e/tonnes.km
   note: Source ECEL

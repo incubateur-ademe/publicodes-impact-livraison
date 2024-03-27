@@ -25,7 +25,7 @@ ligne](https://incubateur-ademe.github.io/publicodes-impact-livraison/).
 Ajouter le paquet à vos dépendances :
 
 ```
-bun add @incubateur-ademe/publicodes-impact-livraison
+yarn add @incubateur-ademe/publicodes-impact-livraison
 ```
 
 Instancier un nouveau moteur Publicode :
@@ -44,7 +44,7 @@ Utiliser certaines règles dans un autre modèle publicodes :
 ```yaml
 importer!:
   depuis:
-    nom: "@incubateur-ademe/publicodes-impact-livraison"
+    nom: '@incubateur-ademe/publicodes-impact-livraison'
     url: https://github.com/incubateur-ademe/publicodes-impact-livraison
   dans: modèle livraison
   les règles:
@@ -63,7 +63,7 @@ Pour installer les dépendances et compiler tous les fichiers `.publicodes` en
 un seul fichier JSON, il suffit d'exécuter la commande suivante :
 
 ```
-bun && bun run build
+yarn && yarn run build
 ```
 
 #### Lancer la documentation
@@ -75,9 +75,9 @@ Pour lancer l'app React en local permettant de parcourir la documentation du
 modèle, il suffit d'exécuter la commande suivante :
 
 ```
-bun i --cwd doc
+yarn i --cwd doc
 
-bun run doc:start
+yarn run doc
 ```
 
 #### Lancer l'API
@@ -89,10 +89,10 @@ Pour lancer le serveur Node permettant d'utiliser l'API REST, il faut utiliser l
 suivantes :
 
 ```
-bun run api
+yarn run api
 
 # En watch-mode
-bun run api:watch
+yarn run api:watch
 ```
 
 ## Publier une nouvelle version
