@@ -36,6 +36,11 @@ livraison colis . déplacement consommateur . mode de déplacement:
     voiture thermique:
     voiture hybride:
     voiture électrique:
+    moto:
+    commun:
+    marche:
+    vélo:
+    petit véhicule électrique:
   formule:
     une possibilité:
       choix obligatoire: oui
