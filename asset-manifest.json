@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/publicodes-impact-livraison/static/css/main.e7811a61.css",
+    "main.js": "/publicodes-impact-livraison/static/js/main.985049b5.js",
+    "static/js/788.1ffc3f8a.chunk.js": "/publicodes-impact-livraison/static/js/788.1ffc3f8a.chunk.js",
+    "index.html": "/publicodes-impact-livraison/index.html",
+    "main.e7811a61.css.map": "/publicodes-impact-livraison/static/css/main.e7811a61.css.map",
+    "main.985049b5.js.map": "/publicodes-impact-livraison/static/js/main.985049b5.js.map",
+    "788.1ffc3f8a.chunk.js.map": "/publicodes-impact-livraison/static/js/788.1ffc3f8a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7811a61.css",
+    "static/js/main.985049b5.js"
+  ]
+}
