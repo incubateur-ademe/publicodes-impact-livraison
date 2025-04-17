@@ -1,5 +1,6 @@
 livraison colis . point de retrait:
   formule: nombre * empreinte point de retrait
+  unité: gCO2e/colis
 
 livraison colis . point de retrait . nombre:
   titre: Nombre de passages en point de retrait dans le processus de livraison
@@ -11,8 +12,9 @@ livraison colis . empreinte point de retrait:
       - infrastructures
       - électricité
       - gaz
+  unité: gCO2e/colis
 
-livraison colis . empreinte point de retrait . taille:
+livraison colis . empreinte point de retrait . surface:
   formule: 10
   unité: m2
 
@@ -20,37 +22,35 @@ livraison colis . empreinte point de retrait . nombre de jours de stockage:
   formule: 2
   unité: jour
 
-livraison colis . empreinte point de retrait . durée de vie:
+livraison colis . empreinte point de retrait . durée de vie par an:
   formule: 50
   unité: an
 
 livraison colis . empreinte point de retrait . volume de stockage par m2:
   formule: 1
-  unité: m3
+  unité: m3/m2
 
 livraison colis . empreinte point de retrait . nombre de colis par m2:
-  formule: volume de stockage par m2 * 1000000 cm3 / informations . volume
+  formule: volume de stockage par m2 * 1000000 cm3/m3 / informations . volume
   unité: colis/m2
-  note: Facteur 1000000 pour la conversion cm3 m3
 
 livraison colis . empreinte point de retrait . infrastructures:
   formule: part point de retrait par colis * empreinte magasin
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . empreinte point de retrait . infrastructures . part point de retrait par colis:
-  formule: 1 / nombre de colis par m2
-
-livraison colis . empreinte point de retrait . infrastructures . nombre de colis par m2:
-  formule: empreinte point de retrait . durée de vie * commun . jours par an * empreinte point de retrait . nombre de colis par m2 / 24
+  formule: nombre de jours de stockage / (durée de vie par an * commun . jours par an / 1 an * nombre de colis par m2)
+  unité: m2/colis
+  note: Besoin du nombre de jours de stockage pour le calcul ?
 
 livraison colis . empreinte point de retrait . infrastructures . empreinte magasin:
   titre: Empreinte construction et démolition magasin traditionnel
   formule: 2500
-  unité: gCO2e/m2/an
+  unité: gCO2e/m2
 
 livraison colis . empreinte point de retrait . électricité:
   formule: (consommation point de retrait par jour / empreinte point de retrait . nombre de colis par m2) * nombre de jours de stockage * empreinte production mix électrique
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . empreinte point de retrait . électricité . consommation point de retrait par jour:
   formule: 0.74
@@ -60,8 +60,8 @@ livraison colis . empreinte point de retrait . électricité . consommation poin
 
 livraison colis . empreinte point de retrait . gaz:
   formule: (consommation point de retrait par jour / empreinte point de retrait . nombre de colis par m2) * nombre de jours de stockage * empreinte production mix gaz
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . empreinte point de retrait . gaz . consommation point de retrait par jour:
-  formule: 82.8 / commun . jours par an
+  formule: 82.8 MJ/m2 / commun . jours par an
   unité: MJ/m2/jour

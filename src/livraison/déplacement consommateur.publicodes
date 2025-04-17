@@ -18,6 +18,7 @@ livraison colis . déplacement consommateur:
       - si: mode de déplacement = "petit véhicule électrique"
         alors: petit véhicule électrique
       - sinon: moyen
+  unité: gCO2e/colis
 
 livraison colis . déplacement consommateur . moyen:
   description: |
@@ -30,6 +31,7 @@ livraison colis . déplacement consommateur . moyen:
       - marche * marche . part déplacement
       - vélo * vélo . part déplacement
       - petit véhicule électrique * petit véhicule électrique . part déplacement
+  unité: gCO2e/colis
 
 livraison colis . déplacement consommateur . mode de déplacement:
   avec:
@@ -54,7 +56,8 @@ livraison colis . déplacement consommateur . mode de déplacement:
 
 livraison colis . déplacement consommateur . distance réelle:
   titre: Distance réelle allouée au colis
-  formule: distance * allocation du trajet au colis
+  formule: distance * allocation du trajet au colis / 1 colis
+  unité: km/colis
 
 livraison colis . déplacement consommateur . distance:
   question: Quelle est la distance moyenne parcourue pour aller chercher son colis ?
@@ -66,11 +69,11 @@ livraison colis . déplacement consommateur . allocation du trajet au colis:
 
 livraison colis . déplacement consommateur . voiture:
   formule: usage
+  unité: gCO2e/colis
 livraison colis . déplacement consommateur . voiture . part déplacement:
   formule: 1 - moto . part déplacement - commun . part déplacement - marche . part déplacement - vélo . part déplacement - petit véhicule électrique . part déplacement
 livraison colis . déplacement consommateur . voiture . usage:
   formule: distance réelle * empreinte
-
 livraison colis . déplacement consommateur . voiture . usage . empreinte:
   formule:
     variations:
@@ -97,6 +100,7 @@ livraison colis . déplacement consommateur . voiture . usage . empreinte:
 
 livraison colis . déplacement consommateur . moto:
   formule: usage
+  unité: gCO2e/colis
 livraison colis . déplacement consommateur . moto . part déplacement:
   formule:
     variations:
@@ -114,8 +118,8 @@ livraison colis . déplacement consommateur . moto . usage:
 livraison colis . déplacement consommateur . moto . usage . empreinte:
   formule:
     moyenne:
-      - 191
-      - 76.3
+      - 191 gCO2e/km
+      - 76.3 gCO2e/km
   unité: gCO2e/km
   note: |
     Base carbone: 
@@ -129,6 +133,7 @@ livraison colis . déplacement consommateur . moto . usage . empreinte:
 
 livraison colis . déplacement consommateur . commun:
   formule: usage
+  unité: gCO2e/colis
 livraison colis . déplacement consommateur . commun . part déplacement:
   formule:
     variations:
@@ -157,6 +162,7 @@ livraison colis . déplacement consommateur . commun . usage . empreinte:
 
 livraison colis . déplacement consommateur . marche:
   formule: 0
+  unité: gCO2e/colis
 livraison colis . déplacement consommateur . marche . part déplacement:
   formule:
     variations:
@@ -180,6 +186,7 @@ livraison colis . déplacement consommateur . marche . part déplacement:
 livraison colis . déplacement consommateur . vélo:
   titre: Vélo musculaire
   formule: 0
+  unité: gCO2e/colis
 livraison colis . déplacement consommateur . vélo . part déplacement:
   formule:
     variations:

@@ -13,6 +13,7 @@ livraison colis . scénario . scénario 1 synthèse:
       - transport inter plateformes 2
       - plateforme
       - transport livraison
+  unité: gCO2e/colis
 
 livraison colis . scénario . scénario 1 synthèse . emballage:
   valeur: livraison colis . emballage

@@ -2,6 +2,7 @@ livraison colis . emballage:
   titre: Emballage du colis
   note: Hypothèse d'un emballage carton uniquement
   formule: poids emballage * empreinte carton
+  unité: gCO2e/colis
 
 livraison colis . empreinte carton:
   formule: 1.29
@@ -10,7 +11,7 @@ livraison colis . empreinte carton:
 
 livraison colis . emballage . poids emballage:
   formule: surface * densité
-  unité: g
+  unité: g/colis
   note: |
     Pour le moment, Publicodes présente une limite importante au niveau de la fonction "Puissance".
     Le but ici étant de déduire du volume d'une sphère son rayon, et donc sa surface, la calcul d'une racine cubique (^1/3) est nécessaire.
@@ -28,10 +29,11 @@ livraison colis . emballage . poids emballage . surface:
   titre: Surface d'emballage
   formule: surface sphère + ajustement
   note: Formule non justifiée dans le calculateur, visiblement, on estime la surface de carton via la surface de la sphère associée au volume du colis + un facteur correctif.
+  unité: cm2/colis
 
 livraison colis . emballage . poids emballage . surface . surface sphère:
   formule: 4 * pi * rayon sphère * rayon sphère
-  unité: cm2
+  unité: cm2/colis
   note: Pour la surface d'une sphère, la formule est S = 4πR^2 ou R est le rayon de la sphère. On a donc besoin d'estimer ce rayon.
 
 livraison colis . emballage . poids emballage . surface . surface sphère . pi:

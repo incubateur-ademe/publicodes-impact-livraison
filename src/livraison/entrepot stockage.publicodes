@@ -1,5 +1,6 @@
 livraison colis . entrepot stockage:
   formule: nombre * empreinte entrepot
+  unité: gCO2e/colis
 
 livraison colis . entrepot stockage . nombre:
   titre: Nombre d'entrepôts de stockage dans le processus de livraison
@@ -11,7 +12,7 @@ livraison colis . empreinte entrepot:
       - infrastructures
       - électricité
       - gaz
-
+  unité: gCO2e/colis
 livraison colis . empreinte entrepot . taille:
   formule: 10000
   unité: m2
@@ -33,19 +34,16 @@ livraison colis . empreinte entrepot . nombre de jours de stockage:
 
 livraison colis . empreinte entrepot . durée de vie:
   formule: 50
-  unité: an
 
 livraison colis . empreinte entrepot . volume de stockage par m2:
   formule: 2
-  unité: m3
+  unité: m3/m2
   note: |
     Hypothèse: Surface au sol = 1m2, hauteur étagère = 2m, largeur couloir = 0.4m
 
 livraison colis . empreinte entrepot . nombre de colis par m2:
-  formule: volume de stockage par m2 * 1000000 cm3 / (informations . volume * facteur multiplication volume)
+  formule: volume de stockage par m2 * 1000000 cm3/m3 / (informations . volume * facteur multiplication volume)
   unité: colis/m2
-  note: |
-    Facteur 1000000 pour la conversion cm3 m3
 
 livraison colis . empreinte entrepot . facteur multiplication volume:
   titre: Facteur de multiplication du volume de l'article (volume occupé/volume article)
@@ -55,22 +53,19 @@ livraison colis . empreinte entrepot . facteur multiplication volume:
 
 livraison colis . empreinte entrepot . infrastructures:
   formule: part entrepot par colis * empreinte entrepot
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . empreinte entrepot . infrastructures . part entrepot par colis:
-  formule: 1 / nombre de colis par m2
-
-livraison colis . empreinte entrepot . infrastructures . nombre de colis par m2:
-  formule: empreinte entrepot . durée de vie * commun . jours par an * empreinte entrepot . nombre de colis par m2 / empreinte entrepot . nombre de jours de stockage
+  formule: empreinte entrepot . nombre de jours de stockage / (empreinte entrepot . durée de vie * commun . jours par an * empreinte entrepot . nombre de colis par m2)
 
 livraison colis . empreinte entrepot . infrastructures . empreinte entrepot:
   titre: Empreinte construction et démolition entrepôt
   formule: 12515.52451
-  unité: gCO2e/m2/an
+  unité: gCO2e/m2
 
 livraison colis . empreinte entrepot . électricité:
   formule: (consommation entrepot par jour / empreinte entrepot . nombre de colis par m2) * nombre de jours de stockage * empreinte production mix électrique
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . empreinte entrepot . électricité . consommation entrepot par jour:
   formule: 0.12
@@ -80,8 +75,8 @@ livraison colis . empreinte entrepot . électricité . consommation entrepot par
 
 livraison colis . empreinte entrepot . gaz:
   formule: (consommation entrepot par jour / empreinte entrepot . nombre de colis par m2) * nombre de jours de stockage * empreinte production mix gaz
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . empreinte entrepot . gaz . consommation entrepot par jour:
-  formule: 82.8 / commun . jours par an
+  formule: 82.8 MJ/m2 / commun . jours par an
   unité: MJ/m2/jour

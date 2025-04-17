@@ -4,6 +4,7 @@ livraison colis . magasin:
       - infrastructures
       - électricité
       - gaz
+  unité: gCO2e/colis
 
 livraison colis . magasin . type:
   avec:
@@ -18,7 +19,7 @@ livraison colis . magasin . type:
     - magasin spécialisé
   par défaut: "'supermarché'"
 
-livraison colis . magasin . taille:
+livraison colis . magasin . surface:
   formule: 2000
   unité: m2
 
@@ -38,26 +39,27 @@ livraison colis . magasin . facteur multiplication volume:
     Hypothèse: Un article occupe environ 4 fois son propre volume en entrepôt logistique (OEFSR retail 2018)
 
 livraison colis . magasin . volume stockage total:
-  formule: taille * 0.5 * 2
+  formule: surface * 0.5 * 2m
   unité: m3
   note: |
     Hypothèse: 50% du magasin est occupé par des étagères de 2m de hauteur
 
 livraison colis . magasin . capacité stockage:
-  formule: volume stockage total * 52
-  unité: m3/semaine.an
+  formule: volume stockage total * 52 semaine/an
+  unité: m3.semaine/an
 
 livraison colis . magasin . infrastructures:
   formule: part magasin par article * empreinte magasin
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . magasin . infrastructures . part magasin par article:
-  formule: taille * (facteur multiplication volume * (informations . volume / 1000000) * (nombre de jours de stockage / 7) / (capacité stockage * durée de vie))
+  formule: surface * (facteur multiplication volume * (informations . volume / 1000000 cm3/m3) * (nombre de jours de stockage / 7 jour/semaine) / (capacité stockage * durée de vie))
+  unité: m2/colis
 
 livraison colis . magasin . infrastructures . empreinte magasin:
   titre: Empreinte construction et démolition magasin traditionnel
   formule: 2500
-  unité: gCO2e/m2/an
+  unité: gCO2e/m2
 
 livraison colis . magasin . consommation énergie totale par an:
   formule:
@@ -70,11 +72,11 @@ livraison colis . magasin . consommation énergie totale par an:
         alors: 290
       - si: type = 'magasin spécialisé'
         alors: 110
-  unité: kWh/m2/an
+  unité: kWh/m2
 
 livraison colis . magasin . électricité:
-  formule: empreinte production mix électrique * ((consommation électrcité par an * taille) / (capacité stockage / (facteur multiplication volume * (informations . volume / 1000000) * (nombre de jours de stockage / 7))))
-  unité: gCO2e
+  formule: empreinte production mix électrique * ((consommation électrcité par an * surface) / (capacité stockage / (facteur multiplication volume * (informations . volume / 1000000 cm3/m3) * (nombre de jours de stockage / 1 an / 7 jour/semaine))))
+  unité: gCO2e/colis
 
 livraison colis . magasin . électricité . part consommation:
   formule: 0.82
@@ -83,11 +85,11 @@ livraison colis . magasin . électricité . consommation électrcité par an:
   formule: part consommation * consommation énergie totale par an
 
 livraison colis . magasin . gaz:
-  formule: empreinte production mix gaz * ((consommation gaz par an * taille) / (capacité stockage / (facteur multiplication volume * (informations . volume / 1000000) * (nombre de jours de stockage / 7))))
-  unité: gCO2e
+  formule: empreinte production mix gaz * ((consommation gaz par an * surface) / (capacité stockage / (facteur multiplication volume * (informations . volume / 1000000 cm3/m3) * (nombre de jours de stockage / 1 an / 7 jour/semaine))))
+  unité: gCO2e/colis
 
 livraison colis . magasin . gaz . part consommation:
   formule: 0.18
 
 livraison colis . magasin . gaz . consommation gaz par an:
-  formule: part consommation * 3.6 * consommation énergie totale par an
+  formule: part consommation * 3.6 MJ/kWh * consommation énergie totale par an

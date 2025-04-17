@@ -35,6 +35,7 @@ livraison colis:
         alors: scénario . click and collect
       - si: scénario = 'magasin traditionnel'
         alors: scénario . magasin traditionnel
+  unité: gCO2e/colis
 
 livraison colis par avion:
   formule:
@@ -83,6 +84,7 @@ livraison colis par avion . europe:
       - entrepot stockage europe
       - transport inter plateformes europe
       - livraison colis
+  unité: gCO2e/colis
 
 livraison colis par avion . entrepot stockage europe:
   valeur: livraison colis . entrepot stockage
@@ -132,6 +134,7 @@ livraison colis . scénario . domicile:
       - transport inter plateformes
       - plateforme
       - transport livraison
+  unité: gCO2e/colis
 
 livraison colis . scénario . point de retrait:
   titre: Livraison en point de retrait
@@ -158,6 +161,7 @@ livraison colis . scénario . point de retrait:
       - transport livraison
       - point de retrait
       - déplacement consommateur
+  unité: gCO2e/colis
 
 livraison colis . scénario . click and collect:
   titre: Livraison "Click and collect"
@@ -184,6 +188,7 @@ livraison colis . scénario . click and collect:
       - transport livraison
       - magasin
       - déplacement consommateur
+  unité: gCO2e/colis
 
 livraison colis . scénario . magasin traditionnel:
   titre: Achat en magasin traditionnel
@@ -203,6 +208,7 @@ livraison colis . scénario . magasin traditionnel:
       - transport inter plateformes
       - magasin
       - déplacement consommateur
+  unité: gCO2e/colis
 
 livraison colis . informations:
 livraison colis . informations . catégorie:
@@ -289,7 +295,7 @@ livraison colis . informations . catégorie . autre:
 livraison colis . informations . volume:
   titre: Volume du colis
   question: Quel est le volume du colis ?
-  unité: cm3
+  unité: cm3/colis
   par défaut:
     variations:
       - si: catégorie = 'grande consommation'
@@ -306,7 +312,7 @@ livraison colis . informations . volume:
 livraison colis . informations . poids:
   titre: Poids du colis
   question: Quel est le poids du colis ?
-  unité: kg
+  unité: kg/colis
   par défaut:
     variations:
       - si: catégorie = 'grande consommation'

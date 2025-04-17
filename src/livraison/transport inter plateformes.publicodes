@@ -1,5 +1,6 @@
 livraison colis . transport inter plateformes:
   formule: empreinte trajet
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . option longue distance:
   question: Le colis vient-il de loin (hors UE) ?
@@ -17,6 +18,7 @@ livraison colis . transport inter plateformes . empreinte trajet:
       - si: option transport aérien
         alors: aérien
       - sinon: routier
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . empreinte trajet longue distance:
   formule:
@@ -28,6 +30,7 @@ livraison colis . transport inter plateformes . empreinte trajet longue distance
     On considère une moyenne de 3 modes de transport pour le cas de la Chine.
 
     ![](https://fr.sino-shipping.com/wp-content/uploads/2021/07/fret-ferroviaire-chine-europe.jpg)
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . routier:
   formule:
@@ -35,6 +38,7 @@ livraison colis . transport inter plateformes . routier:
       - route
       - fabrication véhicule
       - usage véhicule
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . routier . distance:
   question: Quelle est la distance parcourue entre les plateformes, entrepôts de stockage ?
@@ -80,11 +84,11 @@ livraison colis . transport inter plateformes . routier . véhicule . chargement
     Quand taux de charge = 15%
 
 livraison colis . transport inter plateformes . routier . véhicule . vitesse moyenne:
-  formule: 60
+  valeur: 60
 
 livraison colis . transport inter plateformes . routier . route:
   formule: empreinte * tonnes km
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . routier . route . empreinte:
   formule: 5.6
@@ -92,12 +96,12 @@ livraison colis . transport inter plateformes . routier . route . empreinte:
   note: Source ECEL
 
 livraison colis . transport inter plateformes . routier . route . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000
-  unité: t.km
+  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  unité: t.km/colis
 
 livraison colis . transport inter plateformes . routier . fabrication véhicule:
   formule: empreinte * tonnes km
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . routier . fabrication véhicule . empreinte:
   formule:
@@ -109,13 +113,13 @@ livraison colis . transport inter plateformes . routier . fabrication véhicule 
   unité: gCO2e/t.km
 
 livraison colis . transport inter plateformes . routier . fabrication véhicule . tonnes km:
-  formule: distance * véhicule . chargement moyen * livraison colis . informations . poids / 1000
-  unité: t.km
-  note: Je comprends pas pourquoi le chargement moyen apparaît ici
+  formule: distance * véhicule . chargement moyen * livraison colis . informations . poids / 1000 kg/t
+  unité: t.km/colis
+  note: Je comprends pas pourquoi le chargement moyen apparaît ici.
 
 livraison colis . transport inter plateformes . routier . usage véhicule:
-  formule: (livraison colis . informations . poids / 1000) * empreinte * distance . distance totale / véhicule . chargement moyen
-  unité: gCO2e
+  formule: (livraison colis . informations . poids / 1000 kg/t) * empreinte * distance . distance totale / véhicule . chargement moyen
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . routier . usage véhicule . empreinte:
   valeur: empreinte véhicule par km HBEFA
@@ -126,7 +130,7 @@ livraison colis . transport inter plateformes . routier . usage véhicule . empr
 
 livraison colis . transport inter plateformes . aérien:
   formule: tonnes km * empreinte
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . aérien . distance:
   question: Quelle est la distance parcourue entre les plateformes, entrepôts de stockage ?
@@ -148,12 +152,12 @@ livraison colis . transport inter plateformes . aérien . empreinte:
     ![](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/4bea2f32-f584-47eb-9913-bb8ec50eb39f)
 
 livraison colis . transport inter plateformes . aérien . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000
-  unité: t.km
+  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  unité: t.km/colis
 
 livraison colis . transport inter plateformes . ferroviaire:
   formule: tonnes km * empreinte
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . ferroviaire . distance:
   question: Quelle est la distance parcourue entre les plateformes, entrepôts de stockage ?
@@ -166,12 +170,12 @@ livraison colis . transport inter plateformes . ferroviaire . empreinte:
   note: On considère le FE "Europe"
 
 livraison colis . transport inter plateformes . ferroviaire . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000
-  unité: t.km
+  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  unité: t.km/colis
 
 livraison colis . transport inter plateformes . maritime:
   formule: tonnes km * empreinte
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . transport inter plateformes . maritime . distance:
   question: Quelle est la distance parcourue entre les plateformes, entrepôts de stockage ?
@@ -184,5 +188,5 @@ livraison colis . transport inter plateformes . maritime . empreinte:
   note: On considère le FE "Europe"
 
 livraison colis . transport inter plateformes . maritime . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000
-  unité: t.km
+  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  unité: t.km/colis

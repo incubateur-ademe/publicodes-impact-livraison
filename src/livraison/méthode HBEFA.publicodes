@@ -12,6 +12,7 @@ livraison colis . empreinte véhicule par km HBEFA:
 livraison colis . empreinte véhicule par km HBEFA . vitesse moyenne véhicule:
   question: Quelle est la vitesse moyenne du véhicule ?
   par défaut: 30
+  unité: v
 
 livraison colis . empreinte véhicule par km HBEFA . type de véhicule:
   question: Quelle est le type de véhicule ?
@@ -24,6 +25,7 @@ livraison colis . empreinte véhicule par km HBEFA . a0:
         alors: 495.724170429
       - si: type de véhicule = 'PL moyen'
         alors: 2658.381936133
+  unité: gCO2e/t.km
 
 livraison colis . empreinte véhicule par km HBEFA . a1:
   formule:
@@ -32,6 +34,7 @@ livraison colis . empreinte véhicule par km HBEFA . a1:
         alors: -16.736438277
       - si: type de véhicule = 'PL moyen'
         alors: -59.503740818
+  unité: gCO2e/t.km/v
 
 livraison colis . empreinte véhicule par km HBEFA . a2:
   formule:
@@ -40,6 +43,7 @@ livraison colis . empreinte véhicule par km HBEFA . a2:
         alors: 0.333519703
       - si: type de véhicule = 'PL moyen'
         alors: 0.155186660
+  unité: gCO2e/t.km/v2
 
 livraison colis . empreinte véhicule par km HBEFA . a3:
   formule:
@@ -48,6 +52,7 @@ livraison colis . empreinte véhicule par km HBEFA . a3:
         alors: -0.002759366
       - si: type de véhicule = 'PL moyen'
         alors: 0.011536086
+  unité: gCO2e/t.km/v3
 
 livraison colis . empreinte véhicule par km HBEFA . a4:
   formule:
@@ -56,3 +61,4 @@ livraison colis . empreinte véhicule par km HBEFA . a4:
         alors: 0.000008481
       - si: type de véhicule = 'PL moyen'
         alors: -0.000095661
+  unité: gCO2e/t.km/v4

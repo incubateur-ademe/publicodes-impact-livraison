@@ -9,14 +9,13 @@ importer!:
 
 livraison colis . empreinte production mix électrique:
   description: Intensité moyenne, tous types de consommations confondues, année 2022.
-  formule: commun . intensité électricité * 1000
+  # formule: commun . intensité électricité * 1000 gCO2e/kgCO2e
+  formule: 81
   unité: gCO2e/kWh
-  note: Issu de la Base Empreinte. Electricité/2022 - mix moyen/consommation
 
 livraison colis . empreinte production mix gaz:
-  formule: 60.1
+  formule: 74
   unité: gCO2e/MJ
-  note: Issu de la Base Empreinte. Gaz naturel - 2022/mix moyen/consommation. On raisonne en kgCO2e/GJ PCS.
 
 livraison colis . empreinte production mix électrique chine:
   formule: 766

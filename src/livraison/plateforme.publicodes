@@ -1,5 +1,6 @@
 livraison colis . plateforme:
   formule: empreinte plateforme
+  unité: gCO2e/colis
 
 livraison colis . empreinte plateforme:
   formule:
@@ -7,8 +8,9 @@ livraison colis . empreinte plateforme:
       - infrastructures
       - électricité
       - gaz
+  unité: gCO2e/colis
 
-livraison colis . empreinte plateforme . taille:
+livraison colis . empreinte plateforme . surface:
   formule: 10000
   unité: m2
 
@@ -22,29 +24,29 @@ livraison colis . empreinte plateforme . durée de vie:
 
 livraison colis . empreinte plateforme . nombre de colis par jour:
   formule: 100000
+  unité: colis/jour
 
 livraison colis . empreinte plateforme . nombre de colis par an:
-  formule: nombre de colis par jour * commun . jours par an
+  formule: nombre de colis par jour * commun . jours par an / 1 an
+  unité: colis/an
 
 livraison colis . empreinte plateforme . infrastructures:
   formule: part de plateforme par colis * empreinte entrepot
-  unité: gCO2e
+  unité: gCO2e/colis
 
 livraison colis . empreinte plateforme . infrastructures . part de plateforme par colis:
-  formule: 1 / nombre de colis par m2
-
-livraison colis . empreinte plateforme . infrastructures . nombre de colis par m2:
-  formule: empreinte plateforme . nombre de colis par an * empreinte plateforme . durée de vie / empreinte plateforme . taille
+  formule: empreinte plateforme . surface / (empreinte plateforme . nombre de colis par an * empreinte plateforme . durée de vie)
+  unité: m2/colis
 
 livraison colis . empreinte plateforme . infrastructures . empreinte entrepot:
   titre: Empreinte construction et démolition entrepôt
   formule: 12515.52451
-  unité: gCO2e/m2/an
+  unité: gCO2e/m2
 
 livraison colis . empreinte plateforme . électricité:
-  formule: ((consommation plateforme par jour * taille) / nombre de colis par jour) * nombre de jours de stockage * empreinte production mix électrique
-  unité: gCO2e
-
+  formule: (consommation plateforme par jour * surface / nombre de colis par jour / 1 jour) * nombre de jours de stockage  * empreinte production mix électrique
+  unité: gCO2e/colis
+# conso de l'entrepot par jour * nombre de colis / jour de stockage * nombre de jours de stockage
 livraison colis . empreinte plateforme . électricité . consommation plateforme par jour:
   formule: 0.12
   unité: kWh/m2/jour
@@ -52,12 +54,14 @@ livraison colis . empreinte plateforme . électricité . consommation plateforme
     Hypothèse: entrepôt moyennement mécanisé, pas de réfrigération.
 
 livraison colis . empreinte plateforme . gaz:
-  formule: ((consommation plateforme par jour * taille) / nombre de colis par jour) * nombre de jours de stockage * empreinte production mix gaz
-  unité: gCO2e
+  formule: ((consommation plateforme par jour * surface) / nombre de colis par jour / 1 jour) * nombre de jours de stockage * empreinte production mix gaz
+  unité: gCO2e/colis
 
 livraison colis . empreinte plateforme . gaz . consommation plateforme par jour:
-  formule: 82.8 / commun . jours par an
+  formule: 82.8 MJ/m2 / commun . jours par an
   unité: MJ/m2/jour
+#
+#
 # livraison colis . empreinte plateforme . type:
 #   titre: Type de plateforme
 #   avec:
