@@ -1,0 +1,32 @@
+importer!:
+  depuis:
+    nom: "@incubateur-ademe/publicodes-commun"
+    url: https://github.com/incubateur-ademe/publicodes-commun
+  dans: commun
+  les règles:
+    - intensité électricité
+    - jours par an
+
+livraison colis . empreinte production mix électrique:
+  description: Intensité moyenne, tous types de consommations confondues, année 2022.
+  formule: commun . intensité électricité * 1000
+  unité: gCO2e/kWh
+  note: Issu de la Base Empreinte. Electricité/2022 - mix moyen/consommation
+
+livraison colis . empreinte production mix gaz:
+  formule: 60.1
+  unité: gCO2e/MJ
+  note: Issu de la Base Empreinte. Gaz naturel - 2022/mix moyen/consommation. On raisonne en kgCO2e/GJ PCS.
+
+livraison colis . empreinte production mix électrique chine:
+  formule: 766
+  unité: gCO2e/kWh
+  note: |
+    On utilise ici le FE de la base Empreinte même si son utilisation peut être discutable, en attendant un meilleur jeu de données peut-être via https://app.electricitymaps.com/map.
+    L'étude "usage numérique" utilise un FE issus de l'IEA, correspond à priori au FE de production de mix électrique (871.2 gCO2e/kWh)
+    Pour l'Europe, on est à 410.4 gCO2e/kWh via cette même source.
+
+livraison colis . empreinte production mix électrique europe:
+  formule: 420
+  unité: gCO2e/kWh
+  note: Issu de la Base Empreinte. Electricité en Europe - mix moyen
