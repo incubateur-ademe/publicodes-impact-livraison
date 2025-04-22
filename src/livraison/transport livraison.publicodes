@@ -81,13 +81,13 @@ livraison colis . transport livraison . fabrication véhicule . empreinte:
   note: Source ECEL (VUL par défaut)
 
 livraison colis . transport livraison . fabrication véhicule . tonnes km:
-  formule: distance * véhicule . chargement moyen * livraison colis . informations . poids / 1000 kg/t
+  formule: distance * livraison colis . informations . poids / 1000 kg/t
   unité: t.km/colis
-  note: Je comprends pas pourquoi le chargement moyen apparaît ici
 
 livraison colis . transport livraison . usage véhicule:
   formule: (livraison colis . informations . poids / 1000 kg/t) * empreinte * distance . distance totale / véhicule . chargement moyen
   unité: gCO2e/colis
+  note: Pb d'homogénéité avec le chargement moyen qui apparaît ici
 
 livraison colis . transport livraison . usage véhicule . empreinte:
   valeur: empreinte véhicule par km HBEFA
