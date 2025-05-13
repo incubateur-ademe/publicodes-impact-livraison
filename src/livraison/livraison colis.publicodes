@@ -37,69 +37,6 @@ livraison colis:
         alors: scénario . magasin traditionnel
   unité: gCO2e/colis
 
-livraison colis par avion:
-  formule:
-    variations:
-      - si: origine = 'hors europe'
-        alors: hors europe
-      - si: origine = 'europe'
-        alors: europe
-
-livraison colis par avion . origine:
-  avec:
-    europe:
-    hors europe:
-  une possibilité:
-    - europe
-    - hors europe
-  par défaut: "'hors europe'"
-
-livraison colis par avion . hors europe:
-  description: |
-    On considère que le colis vient de Chine, par avion (distance de 9000km)
-  formule:
-    somme:
-      - entrepot stockage chine
-      - transport inter plateformes chine
-      - livraison colis
-
-livraison colis par avion . entrepot stockage chine:
-  valeur: livraison colis . entrepot stockage
-  contexte:
-    livraison colis . empreinte production mix électrique: livraison colis . empreinte production mix électrique chine
-  note: |
-    L'idée ici est d'approcher l'impact de l'entrpôt en Chine via le mix électrique. Attention, c'est un mix de consommation.
-    Il faudrait également faire ce travail pour la consommation de gaz.
-
-livraison colis par avion . transport inter plateformes chine:
-  valeur: livraison colis . transport inter plateformes
-  contexte:
-    livraison colis . transport inter plateformes . option transport aérien: oui
-
-livraison colis par avion . europe:
-  description: |
-    On considère que le colis vient de Chine, par avion (distance de 9000km)
-  formule:
-    somme:
-      - entrepot stockage europe
-      - transport inter plateformes europe
-      - livraison colis
-  unité: gCO2e/colis
-
-livraison colis par avion . entrepot stockage europe:
-  valeur: livraison colis . entrepot stockage
-  contexte:
-    livraison colis . empreinte production mix électrique: livraison colis . empreinte production mix électrique europe
-  note: |
-    L'idée ici est d'approcher l'impact d'un entrepôt en Europe via le mix électrique. Attention, c'est un mix de consommation.
-    Il faudrait également faire ce travail pour la consommation de gaz.
-
-livraison colis par avion . transport inter plateformes europe:
-  valeur: livraison colis . transport inter plateformes
-  contexte:
-    livraison colis . transport inter plateformes . option transport aérien: oui
-    livraison colis . transport inter plateformes . aérien . distance: 2000
-
 livraison colis . scénario:
   titre: Scénario de livraison
   une possibilité:

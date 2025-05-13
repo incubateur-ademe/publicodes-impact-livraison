@@ -1,4 +1,4 @@
-livraison colis . scénario . scénario 1 synthèse:
+livraison colis . scénario . scénario synthèse:
   titre: Livraison à domicile d'une paire de chaussure
   description: |
     Voir p.65 de la synthèse
@@ -15,20 +15,20 @@ livraison colis . scénario . scénario 1 synthèse:
       - transport livraison
   unité: gCO2e/colis
 
-livraison colis . scénario . scénario 1 synthèse . emballage:
+livraison colis . scénario . scénario synthèse . emballage:
   valeur: livraison colis . emballage
   contexte:
     livraison colis . informations . volume: 7000
     livraison colis . informations . poids: 1
     livraison colis . emballage . poids emballage: 215.5
 
-livraison colis . scénario . scénario 1 synthèse . entrepot stockage:
+livraison colis . scénario . scénario synthèse . entrepot stockage:
   valeur: livraison colis . entrepot stockage
   contexte:
     livraison colis . informations . volume: 7000
     livraison colis . informations . poids: 1
 
-livraison colis . scénario . scénario 1 synthèse . transport inter plateformes 1:
+livraison colis . scénario . scénario synthèse . transport inter plateformes 1:
   valeur: livraison colis . transport inter plateformes
   contexte:
     livraison colis . informations . volume: 7000
@@ -36,7 +36,7 @@ livraison colis . scénario . scénario 1 synthèse . transport inter plateforme
     livraison colis . transport inter plateformes . routier . distance: 400
     livraison colis . transport inter plateformes . routier . distance . ratio distance à vide: 0.17
 
-livraison colis . scénario . scénario 1 synthèse . transport inter plateformes 2:
+livraison colis . scénario . scénario synthèse . transport inter plateformes 2:
   valeur: livraison colis . transport inter plateformes
   contexte:
     livraison colis . informations . volume: 7000
@@ -44,13 +44,13 @@ livraison colis . scénario . scénario 1 synthèse . transport inter plateforme
     livraison colis . transport inter plateformes . routier . distance: 100
     livraison colis . transport inter plateformes . routier . distance . ratio distance à vide: 0.17
 
-livraison colis . scénario . scénario 1 synthèse . plateforme:
+livraison colis . scénario . scénario synthèse . plateforme:
   valeur: livraison colis . plateforme
   contexte:
     livraison colis . informations . volume: 7000
     livraison colis . informations . poids: 1
 
-livraison colis . scénario . scénario 1 synthèse . transport livraison:
+livraison colis . scénario . scénario synthèse . transport livraison:
   valeur: livraison colis . transport livraison
   contexte:
     livraison colis . informations . volume: 7000

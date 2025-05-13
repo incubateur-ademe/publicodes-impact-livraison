@@ -11,6 +11,7 @@ livraison colis . empreinte carton:
 
 livraison colis . emballage . poids emballage:
   formule: surface * densité
+  unité: g/colis
 
 livraison colis . emballage . poids emballage . densité:
   titre: Densité du carton

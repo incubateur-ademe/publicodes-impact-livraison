@@ -46,7 +46,7 @@ livraison colis . empreinte plateforme . infrastructures . empreinte entrepot:
 livraison colis . empreinte plateforme . électricité:
   formule: (consommation plateforme par jour * surface / nombre de colis par jour / 1 jour) * nombre de jours de stockage  * empreinte production mix électrique
   unité: gCO2e/colis
-# conso de l'entrepot par jour * nombre de colis / jour de stockage * nombre de jours de stockage
+
 livraison colis . empreinte plateforme . électricité . consommation plateforme par jour:
   formule: 0.12
   unité: kWh/m2/jour
