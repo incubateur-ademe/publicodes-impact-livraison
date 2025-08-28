@@ -1,7 +1,7 @@
 {
-  "name": "publicodes-impact-livraison",
+  "name": "@incubateur-ademe/publicodes-impact-livraison",
   "description": "Modèle Publicodes pour le calcul de l'empreinte carbone de la livraison basé sur l'étude ADEME \"Commerce en ligne impacts environnementaux de la logistique des transports et des déplacements\"",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": "Clément Auger",
   "license": "MIT",
   "type": "module",
