@@ -1,3 +1,7 @@
 .DS_Store
 node_modules
 publicodes-build
+index.d.ts
+index.js
+publicodes-impact-livraison.model.json
+publicodes-doc-build
