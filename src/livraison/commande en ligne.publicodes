@@ -1,10 +1,20 @@
 livraison colis . commande en ligne:
   titre: Processus de commande en ligne
   description: |
-    Comprends l'impact de le construction des devices selon le temps de recherche sur le site du e-commerçant, 
-    mais également l'impact des données échangées durant le processus de commande (mails essentiellement).
+    Comprends l'impact de le construction des devices selon le temps de recherche sur le site du e-commerçant, mais également l'impact des données échangées durant le processus de commande (mails essentiellement).
   note: |
-    La catégorie du produit impacte le temps de recherche et donc l'empreinte de l'utilisation du device pour effectuer la recherche. 
-    Néanmoins, les différences sont négigables devant l'empreinte globale de la livraison, on conserve donc l'ordre de grandeur de 20 gCO2e/colis.
-  formule: 20
+    La catégorie du produit impacte le temps de recherche ainsi que les appareils utilisés selon les produits achetés, et donc in fine l'empreinte de l'utilisation du device pour effectuer la recherche.
+    Cette empreinte dépend uniquement de la catégorie du produit acheté, on conserve, nous n'avons donc pas modélisé entièrement ce poste, notamment au vu de l'impact négligeable de ce poste devant le poids total de la livraison.
+  formule:
+    variations:
+      - si: informations . catégorie = 'grande consommation'
+        alors: 0.0262
+      - si: informations . catégorie = 'habillement'
+        alors: 0.0234
+      - si: informations . catégorie = 'culturel'
+        alors: 0.0197
+      - si: informations . catégorie = 'équipements volumineux'
+        alors: 0.0416
+      - si: informations . catégorie = 'autre'
+        alors: 0.0277
   unité: gCO2e/colis
