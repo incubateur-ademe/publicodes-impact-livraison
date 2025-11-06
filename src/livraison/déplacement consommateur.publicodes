@@ -4,7 +4,6 @@ livraison colis . déplacement consommateur:
       - si:
           une de ces conditions:
             - mode de déplacement = "voiture thermique"
-            - mode de déplacement = "voiture hybride"
             - mode de déplacement = "voiture électrique"
         alors: voiture
       - si: mode de déplacement = "moto"
@@ -36,7 +35,6 @@ livraison colis . déplacement consommateur . moyen:
 livraison colis . déplacement consommateur . mode de déplacement:
   avec:
     voiture thermique:
-    voiture hybride:
     voiture électrique:
     moto:
     commun:
@@ -45,7 +43,6 @@ livraison colis . déplacement consommateur . mode de déplacement:
     petit véhicule électrique:
   une possibilité:
     - voiture thermique
-    - voiture hybride
     - voiture électrique
     - moto
     - commun
@@ -78,19 +75,14 @@ livraison colis . déplacement consommateur . voiture . usage . empreinte:
   formule:
     variations:
       - si: mode de déplacement = "voiture thermique"
-        alors: 216
-      - si: mode de déplacement = "voiture hybride"
-        alors: 232
+        alors: 218
       - si: mode de déplacement = "voiture électrique"
         alors: 103
-      - sinon: 144
+      - sinon: 260
   unité: gCO2e/km
   note: |
-    Base carbone: 
-      - Voiture/Motorisation moyenne/2018 : 0.216 gCO2e/km
-      - Voiture particulière/Coeur de gamme - Véhicule compact/Hybride, mild, essence : 232 gCO2e/km
-      - Voiture particulière/Coeur de gamme - Véhicule compact/Electrique : 103 gCO2e/km
-      - Voiture moyenne/Mixte/2018 : 144 gCO2e/km
+    Chiffres issus d'ICO2 (Base Empreinte derrière), [voiture thermique](https://impactco2.fr/outils/transport/voiturethermique), [voiture électrique](https://impactco2.fr/outils/transport/voitureelectrique).
+    Le chiffre moyen provient de la Base Empreinte directement (Voiture/Motorisation moyenne/2023).
 # livraison colis . déplacement consommateur . voiture . autres impacts:
 #   titre: Impacts fabrication, entretien, infrastructures
 #   formule: distance réelle * empreinte
@@ -118,12 +110,11 @@ livraison colis . déplacement consommateur . moto . usage:
 livraison colis . déplacement consommateur . moto . usage . empreinte:
   formule:
     moyenne:
-      - 191 gCO2e/km
+      - 217 gCO2e/km
       - 76.3 gCO2e/km
   unité: gCO2e/km
   note: |
-    Base carbone: 
-    Moyenne entre Moto > 250 cm3/Mixte/2018 : 191 gCO2e/km et Cyclomoteur/Mixte/2018 : 76.3 gCO2e/km.
+    Chiffres issus d'ICO2, [moto](https://impactco2.fr/outils/transport/moto) et [scooter](https://impactco2.fr/outils/transport/scooter) (Base Empreinte derrière)
 # livraison colis . déplacement consommateur . moto . autres impacts:
 #   titre: Impacts fabrication, entretien, infrastructures
 #   formule: distance réelle * empreinte
@@ -149,10 +140,10 @@ livraison colis . déplacement consommateur . commun . part déplacement:
 livraison colis . déplacement consommateur . commun . usage:
   formule: distance réelle * empreinte
 livraison colis . déplacement consommateur . commun . usage . empreinte:
-  formule: 113
+  formule: 122
   unité: gCO2e/km
   note: |
-    Base carbone: Autobus/Gazole: 113 gCO2e/km
+    Chiffres issus d'[ICO2](https://impactco2.fr/outils/transport/busthermique) (Base Empreinte derrière)
 # livraison colis . déplacement consommateur . commun . autres impacts:
 #   titre: Impacts fabrication, entretien, infrastructures
 #   formule: distance réelle * empreinte
@@ -225,10 +216,10 @@ livraison colis . déplacement consommateur . petit véhicule électrique . part
 livraison colis . déplacement consommateur . petit véhicule électrique . usage:
   formule: distance réelle * empreinte
 livraison colis . déplacement consommateur . petit véhicule électrique . usage . empreinte:
-  formule: 10.9
+  formule: 11
   unité: gCO2e/km
   note: |
-    Base carbone: Vélo/à assistance électrique: 10.9 gCO2e/km
+    Chiffres issus d'[ICO2](https://impactco2.fr/outils/transport/veloelectrique) (Base Empreinte derrière)
 
 # livraison colis . déplacement consommateur . petit véhicule électrique . autres impacts:
 #   titre: Impacts fabrication, entretien, infrastructures

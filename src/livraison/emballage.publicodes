@@ -43,7 +43,8 @@ livraison colis . emballage . poids emballage . surface . surface sphère . rayo
 
 livraison colis . emballage . poids emballage . surface . surface sphère . rayon sphère:
   ## TODO: Update this line once publicodes LS is updated
-  # formule: rayon sphère cube ** (1 / 3)
+  formule: rayon sphère cube ** (1 / 3)
+  unité: cm
   par défaut:
     variations:
       - si: informations . catégorie = 'grande consommation'

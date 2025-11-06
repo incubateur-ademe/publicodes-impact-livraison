@@ -1,0 +1,71 @@
+colis 1kg:
+  contexte:
+    informations . catégorie: "'habillement'"
+    informations . poids: 1
+
+courses alimentaires:
+  contexte:
+    informations . catégorie: "'grande consommation'"
+
+paire de chaussures:
+  contexte:
+    informations . catégorie: "'habillement'"
+
+livre:
+  contexte:
+    informations . catégorie: "'culturel'"
+
+micro-ondes:
+  contexte:
+    informations . catégorie: "'autres'"
+
+commande de vêtements:
+  contexte:
+    informations . catégorie: "'habillement'"
+    informations . poids: 4
+    informations . volume: 48000
+
+lave-linge:
+  contexte:
+    informations . catégorie: "'équipements volumineux'"
+
+lit complet:
+  contexte:
+    informations . catégorie: "'équipements volumineux'"
+    informations . poids: 120
+    informations . volume: 1600000
+
+smartphone:
+  contexte:
+    informations . catégorie: "'culturel'"
+    informations . poids: 0.5
+    informations . volume: 900
+
+caisse de vin:
+  contexte:
+    informations . catégorie: "'grande consommation'"
+    informations . poids: 16.4
+    informations . volume: 36000
+
+cafetière expresso:
+  contexte:
+    informations . catégorie: "'équipements volumineux'"
+    informations . poids: 7.5
+    informations . volume: 26250
+
+la redoute 2kg:
+  contexte:
+    informations . catégorie: "'habillement'"
+    informations . poids: 2
+
+la redoute 15kg:
+  contexte:
+    informations . catégorie: "'équipements volumineux'"
+    informations . poids: 15
+    informations . volume: 100000
+
+la redoute 30kg:
+  contexte:
+    informations . catégorie: "'équipements volumineux'"
+    informations . poids: 30
+    informations . volume: 200000

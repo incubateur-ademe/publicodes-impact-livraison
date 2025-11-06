@@ -58,19 +58,15 @@ livraison colis . scénario . domicile:
       - Entrepôt initial de stockage et de préparation du colis (emballé et stocké entre 15 et 40 jours dans un entrepôt de 10000 m2)
       - Transport entrepôt - plateforme 1: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
       - Plateforme 1 (stocké 1 jour dans un entrepôt de 10000 m2)
-      - Transport plateforme 1 - plateforme 2: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
+      - Transport plateforme 1 - plateforme 2: 123 km (poids lourd moyen, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
       - Plateforme 2 (stocké 1 jour dans un entrepôt de 10000 m2)
-      - Transport plateforme 2 - domicile: 70 km (VUL, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 30 km/h)
+      - Transport vers la livraison: 70 km (VUL, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 30 km/h)
+      - Transport tournée: 45 km (VUL, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 30 km/h)
   formule:
     somme:
-      - commande en ligne
-      - emballage
-      - entrepot stockage
-      - transport inter plateformes
-      - plateforme
-      - transport inter plateformes
-      - plateforme
-      - transport livraison
+      - commande et préparation
+      - stockage et transit livraison à domicile
+      - transport du colis et tournée
   unité: gCO2e/colis
 
 livraison colis . scénario . point de retrait:
@@ -88,15 +84,9 @@ livraison colis . scénario . point de retrait:
       - Déplacement consommateur (7 km en voiture thermique par défaut alloué au exclusivement au colis)
   formule:
     somme:
-      - commande en ligne
-      - emballage
-      - entrepot stockage
-      - transport inter plateformes
-      - plateforme
-      - transport inter plateformes
-      - plateforme
-      - transport livraison
-      - point de retrait
+      - commande et préparation
+      - stockage et transit point de retrait
+      - transport du colis
       - déplacement consommateur
   unité: gCO2e/colis
 
@@ -108,22 +98,16 @@ livraison colis . scénario . click and collect:
       - Entrepôt initial de stockage et de préparation du colis (emballé et stocké entre 15 et 40 jours dans un entrepôt de 10000 m2)
       - Transport entrepôt - plateforme 1: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
       - Plateforme 1 (stocké 1 jour dans un entrepôt de 10000 m2)
-      - Transport plateforme 1 - plateforme 2: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
+      - Transport plateforme 1 - plateforme 2: 123 km (poids lourd moyen, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
       - Plateforme 2 (stocké 1 jour dans un entrepôt de 10000 m2)
       - Transport plateforme 2 - magasin: 70 km (VUL, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 30 km/h)
       - Magasin (stocké 28 jours dans une enseigne type "supermarchés" de 2000 m2)
       - Déplacement consommateur (7 km en voiture thermique par défaut alloué au exclusivement au colis)
   formule:
     somme:
-      - commande en ligne
-      - emballage
-      - entrepot stockage
-      - transport inter plateformes
-      - plateforme
-      - transport inter plateformes
-      - plateforme
-      - transport livraison
-      - magasin
+      - commande et préparation
+      - stockage et transit magasin
+      - transport du colis
       - déplacement consommateur
   unité: gCO2e/colis
 
@@ -134,131 +118,86 @@ livraison colis . scénario . magasin traditionnel:
       - Entrepôt initial de stockage (stocké entre 15 et 40 jours dans un entrepôt de 10000 m2)
       - Transport entrepôt - plateforme 1: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
       - Plateforme 1 (stocké 1 jour dans un entrepôt de 10000 m2)
-      - Transport plateforme 1 - plateforme 2: 400 km (poids lourd moyen, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
+      - Transport plateforme 1 - plateforme 2: 123 km (poids lourd moyen, taux de remplissage de 15% et un taux de retour à vide de 20% roulant à une vitesse moyenne de 60 km/h)
       - Magasin (stocké 28 jours dans une enseigne type "supermarchés" de 2000 m2)
       - Déplacement consommateur (7 km en voiture thermique par défaut alloué au exclusivement au colis)
   formule:
     somme:
-      - entrepot stockage
-      - transport inter plateformes
-      - plateforme
-      - transport inter plateformes
-      - magasin
+      - stockage et transit magasin
+      - transport du colis
       - déplacement consommateur
   unité: gCO2e/colis
 
-livraison colis . informations:
-livraison colis . informations . catégorie:
-  titre: Catégorie de produit
-  une possibilité:
-    - grande consommation
-    - habillement
-    - culturel
-    - équipements volumineux
-    - autre
-  par défaut: "'habillement'"
-  description: |
-    Les produits d'habillement semblent être les plus achetés en ligne (données issues de [cette étude FEVAD 2022](https://www.fevad.com/wp-content/uploads/2022/06/FEVAD_CHIFFRES-CLES_2022_compressed.pdf)!
+livraison colis . scénario . commande et préparation:
+  formule:
+    somme:
+      - commande en ligne
+      - emballage
 
-    ![](https://github.com/datagir/impactco2/assets/55186402/06161a2d-6314-406d-b6f5-971f7e75fbae)
+livraison colis . scénario . stockage et transit livraison à domicile:
+  formule:
+    somme:
+      - entrepot stockage
+      - plateforme
+      - plateforme
 
-  note: |
-    La catégorie de produit impacte : le volume, le poids, le temps passé sur le site de commande, la durée de stockage dans l'entrepôt et le PDV.
+livraison colis . scénario . stockage et transit point de retrait:
+  formule:
+    somme:
+      - entrepot stockage
+      - plateforme
+      - plateforme
+      - livraison colis . point de retrait
 
-livraison colis . informations . catégorie . grande consommation:
-  titre: Produit de grande consommation
-  description: |
-    Pour les produits de grande consommation, il est possible de distinguer produits secs et produits frais. 
-    Afin de simplifier les calculs dans cette première version, nous avons considéré uniquement des produits secs (pas besoin de réfrigération pendant le processus de livraison).
-    Ces produits semblent correspondre à des produits que l'on peut trouver en supermarché.
+livraison colis . scénario . stockage et transit magasin:
+  formule:
+    somme:
+      - entrepot stockage
+      - plateforme
+      - plateforme
+      - magasin
 
-    *Par défaut:*
+livraison colis . scénario . transport du colis:
+  formule:
+    somme:
+      - transport inter plateformes 1
+      - transport inter plateformes 2
+      - transport livraison
+  avec:
+    transport inter plateformes 1:
+      valeur: livraison colis . transport inter plateformes
+      contexte:
+        livraison colis . transport inter plateformes . routier . distance: 400
+    transport inter plateformes 2:
+      valeur: livraison colis . transport inter plateformes
+      contexte:
+        livraison colis . transport inter plateformes . routier . distance: 123
+    transport livraison:
+      valeur: livraison colis . transport livraison
+      contexte:
+        livraison colis . transport livraison . distance: 70
 
-    - Carton de courses
-    - Volume: 45 000 cm3
-    - Poids: 20 kg
-    - Nombre de jours de stockage en entrepôt: 15 jours
-
-livraison colis . informations . catégorie . habillement:
-  titre: Habillement
-  description: |
-    L'habillement correspond à un produit textile qui va de la paire de chaussures, au manteau en passant par le t-shirt…
-
-    *Par défaut:*
-
-    - Boîte à chaussures
-    - Volume: 10 000 cm3
-    - Poids: 1.5 kg
-    - Nombre de jours de stockage en entrepôt: 20 jours
-
-livraison colis . informations . catégorie . culturel:
-  titre: Produit culturel
-  description: |
-    Les produits culturels correspondent aux livres, jeux de société, CD/vinyles, jeux vidéos…
-
-    *Par défaut:*
-
-    - Livre
-    - Volume: 750 cm3
-    - Poids: 0.200 kg
-    - Nombre de jours de stockage en entrepôt: 30 jours
-
-livraison colis . informations . catégorie . équipements volumineux:
-  titre: Equipements volumineux'
-  description: |
-    Tout ce qui ne rentre pas dans les autres catégories !
-
-    *Par défaut:*
-
-    - Moyen constaté
-    - Volume: 88937 cm3
-    - Poids: 18.425 kg
-    - Nombre de jours de stockage en entrepôt: 26.25 jours
-
-livraison colis . informations . catégorie . autre:
-  titre: Autre produit
-  description: |
-    Pour les produits de grande consommation, il est possible de distinguer produits secs et produits frais. 
-    Afin de simplifier les calculs dans cette première version, nous avons considéré uniquement des produits secs (pas besoin de réfrigération pendant le processus de livraison).
-    Ces produits semblent correspondre à des produits que l'on peut trouver en supermarché.
-
-    *Par défaut:*
-
-    - Carton de courses
-    - Volume: 45 000 cm3
-    - Poids: 20 kg
-    - Nombre de jours de stockage en entrepôt: 15 jours
-
-livraison colis . informations . volume:
-  titre: Volume du colis
-  question: Quel est le volume du colis ?
-  unité: cm3/colis
-  par défaut:
-    variations:
-      - si: catégorie = 'grande consommation'
-        alors: 45000
-      - si: catégorie = 'habillement'
-        alors: 10000
-      - si: catégorie = 'culturel'
-        alors: 750
-      - si: catégorie = 'équipements volumineux'
-        alors: 300000
-      - si: catégorie = 'autre'
-        alors: 88937
-
-livraison colis . informations . poids:
-  titre: Poids du colis
-  question: Quel est le poids du colis ?
-  unité: kg/colis
-  par défaut:
-    variations:
-      - si: catégorie = 'grande consommation'
-        alors: 20
-      - si: catégorie = 'habillement'
-        alors: 1.5
-      - si: catégorie = 'culturel'
-        alors: 0.200
-      - si: catégorie = 'équipements volumineux'
-        alors: 70
-      - si: catégorie = 'autre'
-        alors: 18.425
+livraison colis . scénario . transport du colis et tournée:
+  formule:
+    somme:
+      - transport inter plateformes 1
+      - transport inter plateformes 2
+      - transport livraison
+      - transport tournée
+  avec:
+    transport inter plateformes 1:
+      valeur: livraison colis . transport inter plateformes
+      contexte:
+        livraison colis . transport inter plateformes . routier . distance: 400
+    transport inter plateformes 2:
+      valeur: livraison colis . transport inter plateformes
+      contexte:
+        livraison colis . transport inter plateformes . routier . distance: 123
+    transport livraison:
+      valeur: livraison colis . transport livraison
+      contexte:
+        livraison colis . transport livraison . distance: 70
+    transport tournée:
+      valeur: livraison colis . transport livraison
+      contexte:
+        livraison colis . transport livraison . distance: 45
