@@ -96,7 +96,7 @@ livraison colis . transport inter plateformes . routier . route . empreinte:
   note: Source ECEL
 
 livraison colis . transport inter plateformes . routier . route . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  formule: distance * informations . poids / 1000 kg/t
   unité: t.km/colis
 
 livraison colis . transport inter plateformes . routier . fabrication véhicule:
@@ -113,11 +113,11 @@ livraison colis . transport inter plateformes . routier . fabrication véhicule 
   unité: gCO2e/t.km
 
 livraison colis . transport inter plateformes . routier . fabrication véhicule . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  formule: distance * informations . poids / 1000 kg/t
   unité: t.km/colis
 
 livraison colis . transport inter plateformes . routier . usage véhicule:
-  formule: (livraison colis . informations . poids / 1000 kg/t) * empreinte * distance . distance totale / véhicule . chargement moyen
+  formule: (informations . poids / 1000 kg/t) * empreinte * distance . distance totale / véhicule . chargement moyen
   unité: gCO2e/colis
   note: Pb d'homogénéité avec le chargement moyen qui apparaît ici
 
@@ -152,7 +152,7 @@ livraison colis . transport inter plateformes . aérien . empreinte:
     ![](https://github.com/incubateur-ademe/nosgestesclimat/assets/55186402/4bea2f32-f584-47eb-9913-bb8ec50eb39f)
 
 livraison colis . transport inter plateformes . aérien . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  formule: distance * informations . poids / 1000 kg/t
   unité: t.km/colis
 
 livraison colis . transport inter plateformes . ferroviaire:
@@ -170,7 +170,7 @@ livraison colis . transport inter plateformes . ferroviaire . empreinte:
   note: On considère le FE "Europe"
 
 livraison colis . transport inter plateformes . ferroviaire . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  formule: distance * informations . poids / 1000 kg/t
   unité: t.km/colis
 
 livraison colis . transport inter plateformes . maritime:
@@ -188,5 +188,5 @@ livraison colis . transport inter plateformes . maritime . empreinte:
   note: On considère le FE "Europe"
 
 livraison colis . transport inter plateformes . maritime . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  formule: distance * informations . poids / 1000 kg/t
   unité: t.km/colis

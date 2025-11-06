@@ -63,7 +63,7 @@ livraison colis . transport livraison . route . empreinte:
   note: Source ECEL
 
 livraison colis . transport livraison . route . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  formule: distance * informations . poids / 1000 kg/t
   unité: t.km/colis
 
 livraison colis . transport livraison . fabrication véhicule:
@@ -81,11 +81,11 @@ livraison colis . transport livraison . fabrication véhicule . empreinte:
   note: Source ECEL (VUL par défaut)
 
 livraison colis . transport livraison . fabrication véhicule . tonnes km:
-  formule: distance * livraison colis . informations . poids / 1000 kg/t
+  formule: distance * informations . poids / 1000 kg/t
   unité: t.km/colis
 
 livraison colis . transport livraison . usage véhicule:
-  formule: (livraison colis . informations . poids / 1000 kg/t) * empreinte * distance . distance totale / véhicule . chargement moyen
+  formule: (informations . poids / 1000 kg/t) * empreinte * distance . distance totale / véhicule . chargement moyen
   unité: gCO2e/colis
   note: Pb d'homogénéité avec le chargement moyen qui apparaît ici
 

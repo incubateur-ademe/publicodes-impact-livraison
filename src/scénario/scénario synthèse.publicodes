@@ -18,41 +18,41 @@ livraison colis . scénario . scénario synthèse:
 livraison colis . scénario . scénario synthèse . emballage:
   valeur: livraison colis . emballage
   contexte:
-    livraison colis . informations . volume: 7000
-    livraison colis . informations . poids: 1
+    informations . volume: 7000
+    informations . poids: 1
     livraison colis . emballage . poids emballage: 215.5
 
 livraison colis . scénario . scénario synthèse . entrepot stockage:
   valeur: livraison colis . entrepot stockage
   contexte:
-    livraison colis . informations . volume: 7000
-    livraison colis . informations . poids: 1
+    informations . volume: 7000
+    informations . poids: 1
 
 livraison colis . scénario . scénario synthèse . transport inter plateformes 1:
   valeur: livraison colis . transport inter plateformes
   contexte:
-    livraison colis . informations . volume: 7000
-    livraison colis . informations . poids: 1
+    informations . volume: 7000
+    informations . poids: 1
     livraison colis . transport inter plateformes . routier . distance: 400
     livraison colis . transport inter plateformes . routier . distance . ratio distance à vide: 0.17
 
 livraison colis . scénario . scénario synthèse . transport inter plateformes 2:
   valeur: livraison colis . transport inter plateformes
   contexte:
-    livraison colis . informations . volume: 7000
-    livraison colis . informations . poids: 1
+    informations . volume: 7000
+    informations . poids: 1
     livraison colis . transport inter plateformes . routier . distance: 100
     livraison colis . transport inter plateformes . routier . distance . ratio distance à vide: 0.17
 
 livraison colis . scénario . scénario synthèse . plateforme:
   valeur: livraison colis . plateforme
   contexte:
-    livraison colis . informations . volume: 7000
-    livraison colis . informations . poids: 1
+    informations . volume: 7000
+    informations . poids: 1
 
 livraison colis . scénario . scénario synthèse . transport livraison:
   valeur: livraison colis . transport livraison
   contexte:
-    livraison colis . informations . volume: 7000
-    livraison colis . informations . poids: 1
+    informations . volume: 7000
+    informations . poids: 1
     livraison colis . transport livraison . distance: 50
