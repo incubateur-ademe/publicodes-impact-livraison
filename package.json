@@ -13,7 +13,7 @@
   "scripts": {
     "compile": "publicodes compile",
     "dev": "publicodes dev",
-    "doc:build": "publicodes build-doc",
+    "doc:build": "publicodes build-doc -s 'situations'",
     "pretest": "yarn run compile",
     "test": "vitest run",
     "prepack": "yarn compile && cp publicodes-build/* ./"
