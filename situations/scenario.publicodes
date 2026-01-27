@@ -17,7 +17,7 @@ livre:
 
 micro-ondes:
   contexte:
-    informations . catégorie: "'autres'"
+    informations . catégorie: "'autre'"
 
 commande de vêtements:
   contexte:
